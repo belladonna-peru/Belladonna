@@ -261,6 +261,9 @@ function cambiarImagen(imagen) {
   imagenPrincipal.src = imagen.src;
 }
 
-.productos.grid .producto { width: calc(33% - 20px); }
-.productos.list .producto { display: flex; }
+function cambiarVista(vista) {
+  const cont = document.getElementById("productos");
+  cont.classList.toggle("grid", vista === 'grid');
+  cont.classList.toggle("list", vista === 'list');
+}
 
