@@ -31,3 +31,25 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<section class="pago">
+  <h2>Elige tu método de pago</h2>
+  <form id="formPago" class="formulario-pago">
+    <input type="text" id="nombre" placeholder="Nombre completo" required />
+    <input type="email" id="correo" placeholder="Correo electrónico" required />
+    <input type="text" id="direccion" placeholder="Dirección de envío" required />
+
+    <label for="metodoPago">Método de pago:</label>
+    <select id="metodoPago" onchange="mostrarImagenPago()" required>
+      <option value="">Selecciona una opción</option>
+      <option value="yape">Yape</option>
+      <option value="plin">Plin</option>
+      <option value="transferencia">Transferencia bancaria</option>
+    </select>
+
+    <div id="imagenPago" class="metodos-pago"></div>
+
+    <button type="submit" class="cart-btn">Confirmar pago</button>
+    <p id="pago-msg"></p>
+  </form>
+</section>
