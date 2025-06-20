@@ -546,3 +546,62 @@ form {
   color: #555;
   margin-bottom: 20px;
 }
+
+/* Contenedor del header principal */
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Logo */
+.logo a {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #d63384;
+  text-decoration: none;
+}
+
+/* Menú horizontal */
+.menu-horizontal {
+  flex-grow: 1;
+  margin: 0 40px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #d63384;
+  border-bottom: 2px solid #d63384;
+}
+
+/* Íconos de usuario y carrito */
+.iconos-header a {
+  color: #333;
+  font-size: 18px;
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.iconos-header a:hover {
+  color: #d63384;
+}
