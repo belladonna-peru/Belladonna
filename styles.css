@@ -151,3 +151,66 @@ section p {
 .boton-banner:hover {
   background-color: #b0256a;
 }
+
+.carrito-icono {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #d63384;
+  margin-left: 15px;
+}
+
+.carrito-icono span {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #d63384;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.carrito {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.carrito.abierto {
+  right: 0;
+}
+
+.carrito h3 {
+  color: #d63384;
+}
+
+.carrito ul {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.carrito li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.carrito button {
+  background-color: #d63384;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
