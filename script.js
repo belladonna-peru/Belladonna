@@ -261,3 +261,6 @@ function cambiarImagen(imagen) {
   imagenPrincipal.src = imagen.src;
 }
 
+.productos.grid .producto { width: calc(33% - 20px); }
+.productos.list .producto { display: flex; }
+
