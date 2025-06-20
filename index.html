@@ -104,17 +104,22 @@
 <section class="formulario-pago">
   <h3>Finaliza tu Compra</h3>
   <form id="formPago">
-    <input type="text" placeholder="Nombre completo" required>
-    <input type="email" placeholder="Correo electrónico" required>
-    <input type="text" placeholder="Dirección de envío" required>
-    <select required>
+    <input type="text" id="nombre" placeholder="Nombre completo" required>
+    <input type="email" id="correo" placeholder="Correo electrónico" required>
+    <input type="text" id="direccion" placeholder="Dirección de envío" required>
+    
+    <select id="metodoPago" onchange="mostrarImagenPago()" required>
       <option value="">Método de pago</option>
       <option value="yape">Yape</option>
       <option value="plin">Plin</option>
       <option value="transferencia">Transferencia</option>
     </select>
+
+    <!-- Imagen dinámica según método de pago -->
+    <div id="imagenPago" style="margin-bottom: 15px;"></div>
+
     <button class="cart-btn" type="submit">Pagar</button>
-    <p id="pago-msg"></p>
+    <p id="pago-msg" style="margin-top: 10px;"></p>
   </form>
 </section>
 <!-- FORMULARIO DE CONTACTO -->
