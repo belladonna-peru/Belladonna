@@ -267,6 +267,4 @@ function cambiarVista(vista) {
   cont.classList.toggle("list", vista === 'list');
 }
 
-.productos.grid .producto { width: calc(33% - 20px); }
-.productos.list .producto { display: flex; }
 
