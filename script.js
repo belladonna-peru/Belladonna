@@ -256,4 +256,8 @@ function filtrarProductos() {
 document.addEventListener("DOMContentLoaded", () => {
   mostrarProductos(productos);
 });
+function cambiarImagen(imagen) {
+  const imagenPrincipal = document.getElementById("imagenPrincipal");
+  imagenPrincipal.src = imagen.src;
+}
 
