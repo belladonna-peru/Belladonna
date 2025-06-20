@@ -485,3 +485,64 @@ form {
   background: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
+
+.detalle-producto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.galeria-imagenes {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.imagen-principal {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.miniaturas img {
+  width: 80px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.miniaturas img:hover {
+  border: 2px solid #d63384;
+}
+
+.info-producto {
+  flex: 1;
+  min-width: 280px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.info-producto h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.info-producto .precio {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-producto .descripcion {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
