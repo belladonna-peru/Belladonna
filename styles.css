@@ -252,3 +252,111 @@ form {
     grid-template-columns: 1fr;
   }
 }
+
+/* ----- HEADER PRINCIPAL ----- */
+.header-principal {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 15px 20px;
+  font-family: 'Montserrat', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.contenedor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo a {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #d63384;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Buscador */
+.buscador {
+  display: flex;
+  flex: 1;
+  max-width: 400px;
+  margin: 10px 20px;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px 0 0 3px;
+  outline: none;
+}
+
+.buscador button {
+  padding: 8px 12px;
+  background-color: #d63384;
+  border: none;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.buscador button:hover {
+  background-color: #bd1d6e;
+}
+
+/* Íconos usuario y carrito */
+.iconos-header a {
+  color: #333;
+  margin-left: 15px;
+  font-size: 18px;
+  position: relative;
+  text-decoration: none;
+}
+
+#contador-carrito {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #d63384;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+/* Menú navegación */
+.menu-navegacion {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin: 0 15px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #d63384;
+}
