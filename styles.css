@@ -425,3 +425,25 @@ header {
   font-weight: bold;
   color: #444;
 }
+
+.cotizador-envio {
+  background-color: var(--gris-suave);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cotizador-envio h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.cotizador-envio select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
