@@ -60,6 +60,28 @@
       <button onclick="finalizarCompra()" class="cart-btn">Finalizar compra</button>
     </div>
   </div>
+  
+  <section class="seccion-pago">
+  <h2>Métodos de pago</h2>
+  <form id="formPago">
+    <input type="text" id="nombre" placeholder="Nombre completo" required>
+    <input type="email" id="correo" placeholder="Correo electrónico" required>
+    <input type="text" id="direccion" placeholder="Dirección de envío" required>
+
+    <label for="metodoPago">Selecciona método de pago:</label>
+    <select id="metodoPago" onchange="mostrarImagenPago()" required>
+      <option value="">-- Selecciona --</option>
+      <option value="yape">Yape</option>
+      <option value="plin">Plin</option>
+      <option value="transferencia">Transferencia</option>
+    </select>
+
+    <div id="imagenPago" class="metodos-pago"></div>
+
+    <button type="submit" class="cart-btn">Confirmar pedido</button>
+    <p id="pago-msg"></p>
+  </form>
+</section>
 
   <!-- Main: detalle + filtros + productos -->
   <main class="main-contenido">
