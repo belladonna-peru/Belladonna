@@ -64,3 +64,48 @@ function finalizarCompra() {
   actualizarCarrito();
   toggleCarrito();
 }
+
+function mostrarImagenPago() {
+  const metodo = document.getElementById("metodoPago").value;
+  const imagenDiv = document.getElementById("imagenPago");
+
+  let ruta = "";
+  if (metodo === "yape") ruta = "img/yape.png";
+  else if (metodo === "plin") ruta = "img/plin.png";
+  else if (metodo === "transferencia") ruta = "img/transferencia.png";
+  else ruta = "";
+
+  if (ruta) {
+    imagenDiv.innerHTML = `<img src="${ruta}" alt="${metodo}" style="max-width: 250px; border-radius: 10px;">`;
+  } else {
+    imagenDiv.innerHTML = "";
+  }
+}
+
+// Validación y mensaje
+document.addEventListener("DOMContentLoaded", () => {
+  const formPago = document.getElementById("formPago");
+  const msg = document.getElementById("pago-msg");
+
+  if (formPago) {
+    formPago.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const direccion = document.getElementById("direccion").value.trim();
+      const metodo = document.getElementById("metodoPago").value;
+
+      if (!nombre || !correo || !direccion || !metodo) {
+        msg.textContent = "Por favor, completa todos los campos.";
+        msg.style.color = "crimson";
+        return;
+      }
+
+      msg.textContent = "✅ Gracias por tu compra, en breve te contactaremos para coordinar el envío.";
+      msg.style.color = "#28a745";
+      formPago.reset();
+      document.getElementById("imagenPago").innerHTML = "";
+    });
+  }
+});
