@@ -86,3 +86,17 @@
   <script src="script.js"></script>
 </body>
 </html>
+<!-- COTIZADOR DE ENVÍO -->
+<section class="cotizador-envio">
+  <h3>Calcula tu envío</h3>
+  <p>Selecciona tu ciudad:</p>
+  <select id="ciudad">
+    <option value="">-- Elige una ciudad --</option>
+    <option value="lima">Lima</option>
+    <option value="arequipa">Arequipa</option>
+    <option value="cusco">Cusco</option>
+    <option value="otros">Otros</option>
+  </select>
+  <button onclick="cotizarEnvio()" class="cart-btn" style="margin-top: 10px;">Calcular</button>
+  <p id="resultado-envio" style="margin-top: 10px; color: #d63384;"></p>
+</section>
