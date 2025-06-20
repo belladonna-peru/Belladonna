@@ -105,6 +105,15 @@
       <p>S/ 55.00</p>
       <button class="cart-btn" onclick="agregarAlCarrito('Base Líquida Natural', 55)">Agregar al carrito</button>
     </div>
+    
+    <label>Ordenar por</label>
+<select id="orden" onchange="filtrarProductos()">
+  <option value="relevancia">Relevancia</option>
+  <option value="precio-asc">Precio: menor a mayor</option>
+  <option value="precio-desc">Precio: mayor a menor</option>
+  <option value="nombre-asc">Nombre A‑Z</option>
+  <option value="nombre-desc">Nombre Z‑A</option>
+</select>
 
     <!-- Agrega más productos con data-nombre, data-categoria, data-marca y data-precio -->
   </section>
