@@ -605,3 +605,6 @@ form {
 .iconos-header a:hover {
   color: #d63384;
 }
+
+.productos.grid .producto { width: calc(33% - 20px); }
+.productos.list .producto { display: flex; }
