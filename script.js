@@ -195,3 +195,65 @@ function finalizarCompra() {
   toggleCarrito();
 }
 
+const productos = [
+  {
+    nombre: "Labial Mate Rosa",
+    categoria: "labial",
+    marca: "maybelline",
+    precio: 45,
+    imagen: "https://via.placeholder.com/200x200.png?text=Labial+Mate"
+  },
+  {
+    nombre: "Base Líquida Natural",
+    categoria: "base",
+    marca: "zeena",
+    precio: 55,
+    imagen: "https://via.placeholder.com/200x200.png?text=Base+Líquida"
+  },
+  {
+    nombre: "Sérum Hidratante",
+    categoria: "cuidadopiel",
+    marca: "masglo",
+    precio: 60,
+    imagen: "https://via.placeholder.com/200x200.png?text=Serum"
+  }
+];
+
+function mostrarProductos(lista) {
+  const contenedor = document.getElementById("productos");
+  contenedor.innerHTML = "";
+  lista.forEach(prod => {
+    const div = document.createElement("div");
+    div.classList.add("producto");
+    div.innerHTML = `
+      <img src="${prod.imagen}" alt="${prod.nombre}">
+      <h4>${prod.nombre}</h4>
+      <p>S/ ${prod.precio.toFixed(2)}</p>
+      <button class="cart-btn" onclick="agregarAlCarrito('${prod.nombre}', ${prod.precio})">Agregar al carrito</button>
+    `;
+    contenedor.appendChild(div);
+  });
+}
+
+function filtrarProductos() {
+  const texto = document.getElementById("buscar").value.toLowerCase();
+  const categoria = document.getElementById("categoria").value;
+  const marca = document.getElementById("marca").value;
+  const precioMax = parseFloat(document.getElementById("precio").value);
+  document.getElementById("precio-valor").textContent = `S/ ${precioMax}`;
+
+  const resultado = productos.filter(p =>
+    p.nombre.toLowerCase().includes(texto) &&
+    (categoria === "" || p.categoria === categoria) &&
+    (marca === "" || p.marca === marca) &&
+    p.precio <= precioMax
+  );
+
+  mostrarProductos(resultado);
+}
+
+// Inicializa al cargar
+document.addEventListener("DOMContentLoaded", () => {
+  mostrarProductos(productos);
+});
+
