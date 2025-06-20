@@ -25,3 +25,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+let carrito = [];
+let total = 0;
+
+function toggleCarrito() {
+  document.getElementById("carrito").classList.toggle("abierto");
+}
+
+function agregarAlCarrito(nombre, precio) {
+  carrito.push({ nombre, precio });
+  actualizarCarrito();
+}
+
+function actualizarCarrito() {
+  const lista = document.getElementById("lista-carrito");
+  const totalSpan = document.getElementById("total-carrito");
+  const contador = document.getElementById("contador-carrito");
+
+  lista.innerHTML = "";
+  total = 0;
+
+  carrito.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.nombre} - S/ ${item.precio.toFixed(2)}`;
+    lista.appendChild(li);
+    total += item.precio;
+  });
+
+  totalSpan.textContent = `S/ ${total.toFixed(2)}`;
+  contador.textContent = carrito.length;
+}
+
+function finalizarCompra() {
+  alert("Gracias por tu compra 🛍️");
+  carrito = [];
+  actualizarCarrito();
+  toggleCarrito();
+}
