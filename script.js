@@ -125,3 +125,8 @@ function mostrarImagenPago() {
   contenedor.innerHTML = img;
 }
 
+function buscarProducto() {
+  const input = document.getElementById("buscarInput").value.toLowerCase();
+  alert("Buscando: " + input); // Esto se puede reemplazar por lógica real de búsqueda
+}
+
