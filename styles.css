@@ -436,3 +436,25 @@ img {
     font-size: 22px;
   }
 }
+
+/* Mostrar botón solo en móvil */
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-menu.abierto {
+    display: flex;
+  }
+}
