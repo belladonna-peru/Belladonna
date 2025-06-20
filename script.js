@@ -143,4 +143,17 @@ function filtrarProductos() {
     }
   });
 }
+function toggleCarrito() {
+  document.getElementById("carrito").classList.toggle("abierto");
+}
+
+function filtrarProductos() {
+  const input = document.getElementById("buscarInput").value.toLowerCase();
+  const productos = document.querySelectorAll(".producto");
+
+  productos.forEach(producto => {
+    const nombre = producto.querySelector("h4").textContent.toLowerCase();
+    producto.style.display = nombre.includes(input) ? "block" : "none";
+  });
+}
 
