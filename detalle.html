@@ -8,7 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<<section class="detalle-producto">
+  <div class="galeria-imagenes">
+    <img id="imagenPrincipal" src="img/labial1.jpg" alt="Labial Mate Rosa" class="imagen-principal" />
+    <div class="miniaturas">
+      <img src="img/labial1.jpg" alt="Miniatura 1" onclick="cambiarImagen(this)">
+      <img src="img/labial2.jpg" alt="Miniatura 2" onclick="cambiarImagen(this)">
+      <img src="img/labial3.jpg" alt="Miniatura 3" onclick="cambiarImagen(this)">
+    </div>
+  </div>
+
+  <div class="info-producto">
+    <h2>Labial Mate Rosa</h2>
+    <p class="precio">S/ 45.00</p>
+    <p class="descripcion">
+      Labial de acabado mate con alta duración. Color vibrante y textura suave que cuida tus labios.
+    </p>
+    <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
+  </div>
+</section>
 
   <header class="menu-top">
     <div class="contenedor-menu">
