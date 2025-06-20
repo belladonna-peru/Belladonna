@@ -348,3 +348,20 @@ form {
 .menu-secundario a:hover {
   text-decoration: underline;
 }
+
+.busqueda {
+  text-align: center;
+  padding: 20px;
+  background-color: #fce4ec;
+}
+
+.busqueda input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
