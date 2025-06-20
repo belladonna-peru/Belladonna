@@ -38,6 +38,7 @@
         <li><a href="#">Sets & Regalos</a></li>
       </ul>
     </nav>
+
     <!-- Icono carrito -->
     <div class="carrito-icono" onclick="toggleCarrito()">
       <i class="fas fa-shopping-cart"></i>
@@ -82,59 +83,56 @@
     </div>
   </section>
 
+  <!-- COTIZADOR DE ENVÍO -->
+  <section class="cotizador-envio">
+    <h3>Calcula tu envío</h3>
+    <p>Selecciona tu ciudad:</p>
+    <select id="ciudad">
+      <option value="">-- Elige una ciudad --</option>
+      <option value="lima">Lima</option>
+      <option value="arequipa">Arequipa</option>
+      <option value="cusco">Cusco</option>
+      <option value="otros">Otros</option>
+    </select>
+    <button onclick="cotizarEnvio()" class="cart-btn" style="margin-top: 10px;">Calcular</button>
+    <p id="resultado-envio" style="margin-top: 10px; color: #d63384;"></p>
+  </section>
+
+  <!-- FORMULARIO DE PAGO -->
+  <section class="formulario-pago">
+    <h3>Finaliza tu Compra</h3>
+    <form id="formPago">
+      <input type="text" id="nombre" placeholder="Nombre completo" required>
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+      <input type="text" id="direccion" placeholder="Dirección de envío" required>
+
+      <select id="metodoPago" onchange="mostrarImagenPago()" required>
+        <option value="">Método de pago</option>
+        <option value="yape">Yape</option>
+        <option value="plin">Plin</option>
+        <option value="transferencia">Transferencia</option>
+      </select>
+
+      <!-- Imagen del método de pago -->
+      <div id="imagenPago" style="margin: 15px 0;"></div>
+
+      <button class="cart-btn" type="submit">Pagar</button>
+      <p id="pago-msg" style="margin-top: 10px;"></p>
+    </form>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <section class="formulario-contacto">
+    <h3>¿Tienes alguna duda?</h3>
+    <form action="https://formsubmit.co/belladonna_peru@hotmail.com" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="correo" placeholder="Tu correo" required>
+      <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+      <button class="cart-btn" type="submit">Enviar</button>
+    </form>
+  </section>
+
   <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
-<!-- COTIZADOR DE ENVÍO -->
-<section class="cotizador-envio">
-  <h3>Calcula tu envío</h3>
-  <p>Selecciona tu ciudad:</p>
-  <select id="ciudad">
-    <option value="">-- Elige una ciudad --</option>
-    <option value="lima">Lima</option>
-    <option value="arequipa">Arequipa</option>
-    <option value="cusco">Cusco</option>
-    <option value="otros">Otros</option>
-  </select>
-  <button onclick="cotizarEnvio()" class="cart-btn" style="margin-top: 10px;">Calcular</button>
-  <p id="resultado-envio" style="margin-top: 10px; color: #d63384;"></p>
-</section>
-<!-- FORMULARIO DE PAGO -->
-<section class="formulario-pago">
-  <h3>Finaliza tu Compra</h3>
-  <form id="formPago">
-    <input type="text" id="nombre" placeholder="Nombre completo" required>
-    <input type="email" id="correo" placeholder="Correo electrónico" required>
-    <input type="text" id="direccion" placeholder="Dirección de envío" required>
-    
-    <select id="metodoPago" onchange="mostrarImagenPago()" required>
-      <option value="">Método de pago</option>
-      <option value="yape">Yape</option>
-      <option value="plin">Plin</option>
-      <option value="transferencia">Transferencia</option>
-    </select>
-    <section class="metodos-pago">
-  <h3>Opciones de pago</h3>
-  <p>Paga con Yape escaneando el código:</p>
-  <img src="img/IMG_2346.jpeg" alt="Yape QR" style="max-width: 250px;">
-</section>
-
-    <!-- Imagen dinámica según método de pago -->
-    <div id="imagenPago" style="margin-bottom: 15px;"></div>
-
-    <button class="cart-btn" type="submit">Pagar</button>
-    <p id="pago-msg" style="margin-top: 10px;"></p>
-  </form>
-</section>
-<!-- FORMULARIO DE CONTACTO -->
-<section class="formulario-contacto">
-  <h3>¿Tienes alguna duda?</h3>
-  <form action="https://formsubmit.co/belladonna_peru@hotmail.com" method="POST">
-    <input type="text" name="nombre" placeholder="Tu nombre" required>
-    <input type="email" name="correo" placeholder="Tu correo" required>
-    <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
-    <button class="cart-btn" type="submit">Enviar</button>
-  </form>
-</section>
-
