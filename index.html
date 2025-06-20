@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Belladonna - Belleza y Estilo</title>
 
   <!-- CSS y fuentes -->
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
 
   <!-- Íconos Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
@@ -19,10 +19,10 @@
     <h3>Tu carrito</h3>
     <ul id="lista-carrito"></ul>
     <p>Total: <span id="total-carrito">S/ 0.00</span></p>
-    <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
+    <button onclick="finalizarCompra()" class="cart-btn">Finalizar compra</button>
   </div>
 
-  <!-- CABECERA CON MENÚ DE NAVEGACIÓN -->
+  <!-- CABECERA -->
   <header>
     <div class="logo">Belladonna</div>
     <nav>
@@ -38,7 +38,6 @@
         <li><a href="#">Sets & Regalos</a></li>
       </ul>
     </nav>
-
     <!-- Icono carrito -->
     <div class="carrito-icono" onclick="toggleCarrito()">
       <i class="fas fa-shopping-cart"></i>
@@ -46,19 +45,31 @@
     </div>
   </header>
 
-  <!-- SECCIÓN DE BIENVENIDA -->
+  <!-- BIENVENIDA -->
   <section style="text-align: center; padding: 40px;">
     <h1 style="color: #d63384; font-family: 'Playfair Display', serif;">Bienvenida a Belladonna</h1>
     <p style="font-family: 'Montserrat', sans-serif;">Tu tienda online de productos de belleza, elegancia y estilo</p>
   </section>
 
-  <!-- BANNER PRINCIPAL -->
+  <!-- BANNER -->
   <section class="banner">
     <div class="banner-contenido">
       <h2>Descubre tu Belleza Natural</h2>
       <p>Productos exclusivos de las mejores marcas. Estilo, cuidado y elegancia para ti.</p>
       <a href="#" class="boton-banner">Ver Productos</a>
     </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section class="productos">
+    <h3 class="titulo-productos">Productos destacados</h3>
+    <div class="producto">
+      <img src="https://via.placeholder.com/200x200.png?text=Labial+Mate" alt="Labial Mate Rosa" />
+      <h4>Labial Mate Rosa</h4>
+      <p>S/ 45.00</p>
+      <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
+    </div>
+    <!-- Puedes duplicar este bloque para más productos -->
   </section>
 
   <!-- REDES SOCIALES -->
@@ -71,7 +82,7 @@
     </div>
   </section>
 
-  <!-- SCRIPT -->
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
