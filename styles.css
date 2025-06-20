@@ -430,3 +430,58 @@ form {
 .cart-btn:hover {
   background-color: #c0216d;
 }
+
+.filtros-contenedor {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.filtros {
+  flex: 1 1 200px;
+  max-width: 250px;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.filtros label {
+  font-weight: bold;
+  display: block;
+  margin: 15px 0 5px;
+}
+
+.filtros input[type="text"],
+.filtros select,
+.filtros input[type="range"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#precio-valor {
+  display: block;
+  margin-top: 5px;
+  color: #d63384;
+  font-weight: bold;
+}
+
+.productos {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
