@@ -255,3 +255,8 @@ function mostrarImagenPago() {
 
   contenedor.innerHTML = contenido;
 }
+
+// JS para abrir/cerrar menú móvil
+function toggleMenu() {
+  document.querySelector(".nav-menu").classList.toggle("abierto");
+}
