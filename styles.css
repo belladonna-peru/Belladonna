@@ -410,3 +410,15 @@ footer {
     padding: 20px;
   }
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
