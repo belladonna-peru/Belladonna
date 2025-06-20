@@ -25,3 +25,53 @@ body {
 .cart-btn:hover {
   background-color: #e49bb4;
 }
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Encabezado */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #d63384;
+}
+
+/* Menú */
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-menu li {
+  margin: 0 10px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #d633
