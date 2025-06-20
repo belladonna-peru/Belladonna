@@ -1,0 +1,27 @@
+:root {
+  --fucsia-claro: #F7C1D9;
+  --gris-suave: #f9f9f9;
+  --negro: #222;
+  --blanco: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+
+.cart-btn {
+  background-color: var(--fucsia-claro);
+  border: none;
+  padding: 8px 15px;
+  color: var(--blanco);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cart-btn:hover {
+  background-color: #e49bb4;
+}
