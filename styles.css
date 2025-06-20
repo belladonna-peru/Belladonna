@@ -1,6 +1,9 @@
+/* ============ COLORES Y FUENTES ============ */
 :root {
-  --fucsia-claro: #F7C1D9;
-  --gris-suave: #f9f9f9;
+  --fucsia-claro: #f7c1d9;
+  --fucsia-oscuro: #d63384;
+  --gris-claro: #f9f9f9;
+  --gris-texto: #555555;
   --negro: #222;
   --blanco: #fff;
 }
@@ -9,35 +12,14 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: var(--blanco);
-  color: var(--negro);
+  color: var(--gris-texto);
+  line-height: 1.6;
 }
 
-.cart-btn {
-  background-color: var(--fucsia-claro);
-  border: none;
-  padding: 8px 15px;
-  color: var(--blanco);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.cart-btn:hover {
-  background-color: #e49bb4;
-}
-
-/* ==================== ESTILO GENERAL ==================== */
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #ffffff;
-  color: #333333;
-}
-
-/* ==================== ENCABEZADO ==================== */
+/* ============ CABECERA Y MENÚ ============ */
 header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #eeeeee;
+  background-color: var(--blanco);
+  border-bottom: 1px solid #eee;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,237 +29,107 @@ header {
   z-index: 100;
 }
 
-/* ==================== LOGO ==================== */
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #d63384; /* Fucsia elegante */
+  font-size: 2rem;
+  color: var(--fucsia-oscuro);
+  font-weight: bold;
 }
 
-/* ==================== MENÚ DE NAVEGACIÓN ==================== */
 .nav-menu {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
-.nav-menu li {
-  margin: 0 10px;
-}
-
-.nav-menu a {
+.nav-menu li a {
   text-decoration: none;
-  color: #555555;
+  color: var(--gris-texto);
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.nav-menu a:hover {
-  color: #d63384;
+.nav-menu li a:hover {
+  color: var(--fucsia-oscuro);
 }
 
-/* ==================== SECCIÓN BIENVENIDA ==================== */
-section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-section h1 {
-  color: #d63384;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
-
-section p {
-  font-size: 1.1rem;
-  color: #666666;
-}
-
-/* ==================== BANNER PRINCIPAL ==================== */
-/* ==================== BANNER PRINCIPAL ==================== */
-.banner {
-  background-image: url('https://img.freepik.com/foto-gratis/maquillaje-accesorios-belleza_23-2148741184.jpg'); /* Imagen 4 */
-  background-size: cover;
-  background-position: center;
-  padding: 120px 20px;
-  color: white;
-  text-align: center;
-  position: relative;
-}
-
-.banner::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* oscurece sutilmente para que el texto resalte */
-  z-index: 1;
-}
-
-.banner-contenido {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.banner h2 {
-  font-size: 2.8rem;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-}
-
-.banner p {
-  font-size: 1.3rem;
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 30px;
-}
-
-.boton-banner {
-  padding: 14px 30px;
-  background-color: #d63384;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 30px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.boton-banner:hover {
-  background-color: #b0256a;
-}
-
+/* ============ CARRITO ============ */
 .carrito-icono {
-  position: relative;
   cursor: pointer;
-  font-size: 1.6rem;
-  color: #d63384;
-  margin-left: 15px;
+  position: relative;
 }
 
-.carrito-icono span {
+.carrito-icono i {
+  font-size: 1.4rem;
+  color: var(--fucsia-oscuro);
+}
+
+#contador-carrito {
+  background: var(--fucsia-oscuro);
+  color: var(--blanco);
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
   position: absolute;
   top: -8px;
   right: -10px;
-  background-color: #d63384;
-  color: white;
-  font-size: 0.8rem;
-  padding: 2px 6px;
-  border-radius: 50%;
 }
 
 .carrito {
   position: fixed;
-  top: 0;
-  right: -300px;
+  top: 70px;
+  right: -400px;
   width: 300px;
-  height: 100%;
-  background-color: white;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  background: var(--blanco);
+  border-left: 1px solid #eee;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.1);
   padding: 20px;
-  transition: right 0.3s ease;
-  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+  z-index: 200;
 }
 
 .carrito.abierto {
   right: 0;
 }
 
-.carrito h3 {
-  color: #d63384;
-}
-
-.carrito ul {
-  list-style: none;
-  padding: 0;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.carrito li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.carrito button {
-  background-color: #d63384;
-  color: white;
+.cart-btn {
+  background-color: var(--fucsia-claro);
   border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 5px;
+  padding: 10px 20px;
+  color: var(--blanco);
+  font-weight: bold;
+  border-radius: 25px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-:root {
-  --fucsia-claro: #f7c1d9;
-  --gris-suave: #f9f9f9;
-  --negro: #222;
-  --blanco: #fff;
+.cart-btn:hover {
+  background-color: var(--fucsia-oscuro);
 }
 
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--blanco);
-  color: var(--negro);
+/* ============ SECCIÓN GENERAL ============ */
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-/* Header */
-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #eeeeee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 25px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.logo {
+h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #d63384;
+  color: var(--fucsia-oscuro);
 }
 
-.nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+p {
+  font-size: 1rem;
+  color: var(--gris-texto);
 }
 
-.nav-menu li {
-  margin: 0 10px;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #555555;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-menu a:hover {
-  color: #d63384;
-}
-
-/* Banner */
+/* ============ BANNER PRINCIPAL ============ */
 .banner {
   background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231130/pngtree-cosmetic-makeup-flat-lay-with-copy-space-pink-white-background-image_13898744.jpg');
   background-size: cover;
   background-position: center;
   padding: 120px 20px;
-  text-align: center;
   position: relative;
   color: #fff;
 }
@@ -295,88 +147,67 @@ header {
 .banner-contenido {
   position: relative;
   z-index: 2;
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.banner h2 {
-  font-size: 2.6rem;
-  font-family: 'Playfair Display', serif;
-  color: #ffffff;
-}
-
-.banner p {
-  font-size: 1.2rem;
-  font-family: 'Montserrat', sans-serif;
-  color: #f1f1f1;
+  max-width: 600px;
+  margin: auto;
 }
 
 .boton-banner {
-  padding: 14px 30px;
-  background-color: #d63384;
-  color: white;
+  margin-top: 20px;
+  display: inline-block;
+  background: var(--fucsia-oscuro);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 30px;
-  font-size: 1rem;
-}
-
-/* Carrito */
-.carrito {
-  display: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  background: white;
-  width: 300px;
-  height: 100%;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  z-index: 200;
-}
-
-.carrito.abierto {
-  display: block;
-}
-
-.carrito-icono {
-  cursor: pointer;
-  color: #d63384;
-  font-size: 1.5rem;
-  margin-left: 10px;
-}
-
-/* Botones */
-.cart-btn {
-  background-color: var(--fucsia-claro);
-  border: none;
-  padding: 8px 15px;
-  color: var(--blanco);
-  border-radius: 5px;
-  cursor: pointer;
   transition: background 0.3s;
 }
 
-.cart-btn:hover {
-  background-color: #e49bb4;
+.boton-banner:hover {
+  background: #a31e5b;
 }
 
-/* Redes sociales */
-.redes-sociales {
-  background-color: var(--gris-suave);
-  padding: 40px 20px;
+/* ============ PRODUCTOS DESTACADOS ============ */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.producto {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 15px;
   text-align: center;
+  transition: transform 0.2s;
 }
 
-.redes-sociales h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #d63384;
-  margin-bottom: 20px;
+.producto:hover {
+  transform: scale(1.03);
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.titulo-productos {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* ============ REDES SOCIALES ============ */
+.redes-sociales {
+  background-color: var(--gris-claro);
+  padding: 40px 20px;
 }
 
 .iconos-redes a {
-  color: #d63384;
+  color: var(--fucsia-oscuro);
   font-size: 2rem;
   margin: 0 15px;
   transition: color 0.3s;
@@ -386,105 +217,38 @@ header {
   color: #a31e5b;
 }
 
-/* Productos */
-.productos {
-  padding: 40px 20px;
-  background-color: var(--gris-suave);
-  text-align: center;
-}
-
-.titulo-productos {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #d63384;
-  margin-bottom: 30px;
-}
-
-.producto {
-  display: inline-block;
-  width: 220px;
-  margin: 10px;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-.producto img {
+/* ============ FORMULARIOS ============ */
+input, select, textarea {
   width: 100%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
   border-radius: 10px;
-}
-
-.producto h4 {
-  margin: 10px 0 5px;
   font-family: 'Montserrat', sans-serif;
-}
-
-.producto p {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #444;
-}
-
-.cotizador-envio {
-  background-color: var(--gris-suave);
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.cotizador-envio h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #d63384;
-  margin-bottom: 10px;
-}
-
-.cotizador-envio select {
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 200px;
-}
-
-/* FORMULARIOS - Estilo compartido */
-.formulario-pago,
-.formulario-contacto {
-  background-color: var(--gris-suave);
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.formulario-pago h3,
-.formulario-contacto h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #d63384;
-  margin-bottom: 20px;
 }
 
 form {
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 500px;
+  margin: auto;
 }
 
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+/* ============ IMÁGENES DE PAGO ============ */
+.metodos-pago img {
+  margin-top: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  max-width: 250px;
 }
 
-form textarea {
-  resize: none;
-}
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 
-form button {
-  width: 100%;
+  .productos {
+    grid-template-columns: 1fr;
+  }
 }
-
