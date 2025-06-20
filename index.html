@@ -75,6 +75,39 @@
   </div>
 </section>
 
+<section class="filtros-contenedor">
+  <aside class="filtros">
+    <h4>Filtrar por:</h4>
+
+    <label for="buscar">Buscar</label>
+    <input type="text" id="buscar" onkeyup="filtrarProductos()" placeholder="Buscar productos...">
+
+    <label for="categoria">Categoría</label>
+    <select id="categoria" onchange="filtrarProductos()">
+      <option value="">Todas</option>
+      <option value="labial">Labial</option>
+      <option value="base">Base</option>
+      <option value="cuidadopiel">Cuidado de la piel</option>
+    </select>
+
+    <label for="marca">Marca</label>
+    <select id="marca" onchange="filtrarProductos()">
+      <option value="">Todas</option>
+      <option value="maybelline">Maybelline</option>
+      <option value="zeena">Zeena</option>
+      <option value="masglo">Masglo</option>
+    </select>
+
+    <label for="precio">Precio máximo</label>
+    <input type="range" id="precio" min="0" max="100" value="100" oninput="filtrarProductos()">
+    <span id="precio-valor">S/ 100</span>
+  </aside>
+
+  <section class="productos" id="productos">
+    <!-- PRODUCTOS DINÁMICOS DESDE JS -->
+  </section>
+</section>
+
 <!-- PRODUCTOS CON FILTRO -->
 <section class="productos" id="productos">
   <h3 class="titulo-productos">Productos destacados</h3>
