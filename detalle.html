@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle del Producto - Belladonna</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Puedes incluir tu header aquí si quieres que se vea igual -->
+
+  <section class="detalle-producto">
+    <div class="detalle-imagen">
+      <img id="img-principal" src="https://via.placeholder.com/400x400.png?text=Labial+Mate" alt="Labial Mate Rosa">
+      <div class="miniaturas">
+        <img src="https://via.placeholder.com/100x100.png?text=Labial+1" onclick="cambiarImagen(this.src)">
+        <img src="https://via.placeholder.com/100x100.png?text=Labial+2" onclick="cambiarImagen(this.src)">
+      </div>
+    </div>
+
+    <div class="detalle-info">
+      <h2>Labial Mate Rosa</h2>
+      <p class="precio">S/ 45.00</p>
+      <p class="descripcion">Un labial de acabado mate, textura suave y de larga duración. Ideal para destacar tu sonrisa con elegancia y color.</p>
+
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" value="1" min="1">
+
+      <button class="cart-btn" onclick="agregarDetalleAlCarrito()">Agregar al carrito</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
