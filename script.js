@@ -130,3 +130,17 @@ function buscarProducto() {
   alert("Buscando: " + input); // Esto se puede reemplazar por lógica real de búsqueda
 }
 
+function filtrarProductos() {
+  const input = document.getElementById("buscarInput").value.toLowerCase();
+  const productos = document.querySelectorAll(".producto");
+
+  productos.forEach(producto => {
+    const nombre = producto.querySelector("h4").textContent.toLowerCase();
+    if (nombre.includes(input)) {
+      producto.style.display = "block";
+    } else {
+      producto.style.display = "none";
+    }
+  });
+}
+
