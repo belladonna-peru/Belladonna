@@ -447,3 +447,44 @@ header {
   width: 200px;
 }
 
+/* FORMULARIOS - Estilo compartido */
+.formulario-pago,
+.formulario-contacto {
+  background-color: var(--gris-suave);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.formulario-pago h3,
+.formulario-contacto h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #d63384;
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: none;
+}
+
+form button {
+  width: 100%;
+}
+
