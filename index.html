@@ -1,149 +1,38 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Belladonna - Belleza y Estilo</title>
+<!-- HEADER PRINCIPAL -->
+<header class="header-principal">
+  <div class="contenedor-header">
 
-  <!-- CSS y fuentes -->
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
-
-  <!-- Íconos Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-<body>
-
-<!-- HEADER CON BUSCADOR Y MENÚ -->
-<header class="menu-top">
-  <div class="contenedor-menu">
-    <div class="logo">Belladonna</div>
-    <div class="buscador">
-      <input type="text" placeholder="Buscar productos..." id="buscarInput" onkeyup="filtrarProductos()" />
-      <button><i class="fas fa-search"></i></button>
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="#">Belladonna</a>
     </div>
+
+    <!-- BUSCADOR -->
+    <div class="buscador">
+      <input type="text" id="buscarInput" placeholder="Buscar productos...">
+      <button onclick="filtrarProductos()"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- ICONOS DE USUARIO Y CARRITO -->
     <div class="iconos-header">
       <a href="#"><i class="fas fa-user"></i></a>
-      <a href="#" onclick="toggleCarrito()"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
+      <a href="#" onclick="toggleCarrito()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="contador-carrito">0</span>
+      </a>
     </div>
   </div>
 
-  <nav class="menu-secundario">
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <nav class="menu-navegacion">
     <ul class="nav-menu">
       <li><a href="#">Marcas</a></li>
-      <li><a href="#">Cuidado de la piel</a></li>
+      <li><a href="#">Cuidado Facial</a></li>
       <li><a href="#">Cabello</a></li>
       <li><a href="#">Maquillaje</a></li>
       <li><a href="#">Fragancias</a></li>
-      <li><a href="#">Descuentos</a></li>
+      <li><a href="#">Ofertas</a></li>
+      <li><a href="#">Regalos</a></li>
     </ul>
   </nav>
 </header>
-
-<!-- CARRITO LATERAL -->
-<div id="carrito" class="carrito">
-  <h3>Tu carrito</h3>
-  <ul id="lista-carrito"></ul>
-  <p>Total: <span id="total-carrito">S/ 0.00</span></p>
-  <button onclick="finalizarCompra()" class="cart-btn">Finalizar compra</button>
-</div>
-
-<!-- BIENVENIDA -->
-<section style="text-align: center; padding: 40px;">
-  <h1 style="color: #d63384; font-family: 'Playfair Display', serif;">Bienvenida a Belladonna</h1>
-  <p style="font-family: 'Montserrat', sans-serif;">Tu tienda online de productos de belleza, elegancia y estilo</p>
-</section>
-
-<!-- BANNER -->
-<section class="banner">
-  <div class="banner-contenido">
-    <h2>Descubre tu Belleza Natural</h2>
-    <p>Productos exclusivos de las mejores marcas. Estilo, cuidado y elegancia para ti.</p>
-    <a href="#" class="boton-banner">Ver Productos</a>
-  </div>
-</section>
-
-<!-- PRODUCTOS CON FILTRO -->
-<section class="productos" id="productos">
-  <h3 class="titulo-productos">Productos destacados</h3>
-  <div class="producto" data-nombre="labial mate rosa">
-    <img src="https://via.placeholder.com/200x200.png?text=Labial+Mate" alt="Labial Mate Rosa" />
-    <h4>Labial Mate Rosa</h4>
-    <p>S/ 45.00</p>
-    <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
-  </div>
-
-  <div class="producto" data-nombre="base líquida natural">
-    <img src="https://via.placeholder.com/200x200.png?text=Base+Líquida" alt="Base Líquida" />
-    <h4>Base Líquida Natural</h4>
-    <p>S/ 55.00</p>
-    <button class="cart-btn" onclick="agregarAlCarrito('Base Líquida Natural', 55)">Agregar al carrito</button>
-  </div>
-
-  <!-- Agrega más productos aquí con data-nombre -->
-</section>
-
-<!-- REDES SOCIALES -->
-<section class="redes-sociales">
-  <h3>Síguenos en nuestras redes sociales</h3>
-  <div class="iconos-redes">
-    <a href="https://www.instagram.com/bella.donna_peru" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/1Akv9QbW88/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://wa.me/51972389767" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
-</section>
-
-<!-- SCRIPT -->
-<script>
-  function toggleCarrito() {
-    document.getElementById("carrito").classList.toggle("abierto");
-  }
-
-  let carrito = [];
-  function agregarAlCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
-    actualizarCarrito();
-  }
-
-  function actualizarCarrito() {
-    const lista = document.getElementById("lista-carrito");
-    const totalSpan = document.getElementById("total-carrito");
-    const contador = document.getElementById("contador-carrito");
-    lista.innerHTML = "";
-    let total = 0;
-
-    carrito.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = `${item.nombre} - S/ ${item.precio.toFixed(2)}`;
-      lista.appendChild(li);
-      total += item.precio;
-    });
-
-    totalSpan.textContent = `S/ ${total.toFixed(2)}`;
-    contador.textContent = carrito.length;
-  }
-
-  function finalizarCompra() {
-    alert("Gracias por tu compra 🛍️");
-    carrito = [];
-    actualizarCarrito();
-    toggleCarrito();
-  }
-
-  // Filtro de productos
-  function filtrarProductos() {
-    const input = document.getElementById("buscarInput").value.toLowerCase();
-    const productos = document.querySelectorAll(".producto");
-
-    productos.forEach(producto => {
-      const nombre = producto.dataset.nombre;
-      if (nombre.includes(input)) {
-        producto.style.display = "block";
-      } else {
-        producto.style.display = "none";
-      }
-    });
-  }
-</script>
-</body>
-</html>
