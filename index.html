@@ -147,3 +147,41 @@
 </script>
 </body>
 </html>
+<!-- HEADER PRINCIPAL -->
+<header class="header-principal">
+  <div class="contenedor-header">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="#">Belladonna</a>
+    </div>
+
+    <!-- BUSCADOR -->
+    <div class="buscador">
+      <input type="text" id="buscarInput" placeholder="Buscar productos...">
+      <button onclick="filtrarProductos()"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- ICONOS DE USUARIO Y CARRITO -->
+    <div class="iconos-header">
+      <a href="#"><i class="fas fa-user"></i></a>
+      <a href="#" onclick="toggleCarrito()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="contador-carrito">0</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <nav class="menu-navegacion">
+    <ul class="nav-menu">
+      <li><a href="#">Marcas</a></li>
+      <li><a href="#">Cuidado Facial</a></li>
+      <li><a href="#">Cabello</a></li>
+      <li><a href="#">Maquillaje</a></li>
+      <li><a href="#">Fragancias</a></li>
+      <li><a href="#">Ofertas</a></li>
+      <li><a href="#">Regalos</a></li>
+    </ul>
+  </nav>
+</header>
