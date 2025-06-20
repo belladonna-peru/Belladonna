@@ -12,14 +12,15 @@
   <!-- Íconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<!-- CARRITO LATERAL -->
-<div id="carrito" class="carrito">
-  <h3>Tu carrito</h3>
-  <ul id="lista-carrito"></ul>
-  <p>Total: <span id="total-carrito">S/ 0.00</span></p>
-  <button onclick="finalizarCompra()">Finalizar compra</button>
-</div>
 <body>
+
+  <!-- CARRITO LATERAL -->
+  <div id="carrito" class="carrito">
+    <h3>Tu carrito</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Total: <span id="total-carrito">S/ 0.00</span></p>
+    <button onclick="finalizarCompra()">Finalizar compra</button>
+  </div>
 
   <!-- CABECERA CON MENÚ DE NAVEGACIÓN -->
   <header>
@@ -37,28 +38,13 @@
         <li><a href="#">Sets & Regalos</a></li>
       </ul>
     </nav>
-  <header>
-  <div class="logo">Belladonna</div>
-  <nav>
-    <ul class="nav-menu">
-      <li><a href="#">Marcas</a></li>
-      <li><a href="#">Cuidado de la piel</a></li>
-      <li><a href="#">Cabello</a></li>
-      <li><a href="#">Maquillaje</a></li>
-      <li><a href="#">Cuidado corporal</a></li>
-      <li><a href="#">Accesorios</a></li>
-      <li><a href="#">Fragancias</a></li>
-      <li><a href="#">Descuentos</a></li>
-      <li><a href="#">Sets & Regalos</a></li>
-    </ul>
-  </nav>
 
-  <!-- Icono carrito -->
-  <div class="carrito-icono" onclick="toggleCarrito()">
-    <i class="fas fa-shopping-cart"></i>
-    <span id="contador-carrito">0</span>
-  </div>
-</header>
+    <!-- Icono carrito -->
+    <div class="carrito-icono" onclick="toggleCarrito()">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="contador-carrito">0</span>
+    </div>
+  </header>
 
   <!-- SECCIÓN DE BIENVENIDA -->
   <section style="text-align: center; padding: 40px;">
