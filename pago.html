@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagar – Belladonna</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="header-principal">...</header>
+
+  <main style="padding: 40px;">
+    <h2 class="titulo">Finalizar Compra</h2>
+    <form id="formPago" class="formulario-pago">
+      <input id="nombre" type="text" placeholder="Nombre completo" required />
+      <input id="correo" type="email" placeholder="Correo electrónico" required />
+      <input id="direccion" type="text" placeholder="Dirección de envío" required />
+      <select id="metodoPago" onchange="mostrarImagenPago()" required>
+        <option value="">Método de pago</option>
+        <option value="yape">Yape</option>
+        <option value="plin">Plin</option>
+        <option value="transferencia">Transferencia</option>
+      </select>
+      <div id="imagenPago"></div>
+      <button type="submit" class="cart-btn">Pagar</button>
+      <p id="pago-msg"></p>
+    </form>
+  </main>
+
+  <footer>...</footer>
+  <script src="script.js"></script>
+</body>
+</html>
