@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Carrito de compras
 let carrito = [];
 let total = 0;
 
@@ -36,7 +37,6 @@ function toggleCarrito() {
 function agregarAlCarrito(nombre, precio) {
   carrito.push({ nombre, precio });
   actualizarCarrito();
-  <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
 }
 
 function actualizarCarrito() {
