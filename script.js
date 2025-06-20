@@ -197,3 +197,61 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const formPago = document.getElementById("formPago");
+  const msg = document.getElementById("pago-msg");
+
+  if (formPago) {
+    formPago.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const direccion = document.getElementById("direccion").value.trim();
+      const metodo = document.getElementById("metodoPago").value;
+
+      if (!nombre || !correo || !direccion || !metodo) {
+        msg.textContent = "Por favor, completa todos los campos.";
+        msg.style.color = "crimson";
+        return;
+      }
+
+      msg.textContent = "✅ Gracias por tu compra. En breve te contactaremos.";
+      msg.style.color = "#28a745";
+      formPago.reset();
+      document.getElementById("imagenPago").innerHTML = "";
+    });
+  }
+});
+
+function mostrarImagenPago() {
+  const metodo = document.getElementById("metodoPago").value;
+  const contenedor = document.getElementById("imagenPago");
+
+  let contenido = "";
+
+  if (metodo === "yape") {
+    contenido = `
+      <p>Escanea el código QR de Yape:</p>
+      <img src="img/yape_qr.jpg" alt="Yape QR" style="max-width: 220px; border-radius: 10px;">
+    `;
+  } else if (metodo === "plin") {
+    contenido = `
+      <p>Escanea el código QR de Plin:</p>
+      <img src="img/plin_qr.jpg" alt="Plin QR" style="max-width: 220px; border-radius: 10px;">
+    `;
+  } else if (metodo === "transferencia") {
+    contenido = `
+      <p>Realiza la transferencia a:</p>
+      <ul style="text-align: left; padding-left: 20px;">
+        <li><strong>Banco:</strong> BCP</li>
+        <li><strong>N° Cuenta:</strong> 191-23456789-0-12</li>
+        <li><strong>CCI:</strong> 00219100234567890123</li>
+        <li><strong>Nombre:</strong> Belladonna Perú</li>
+      </ul>
+    `;
+  }
+
+  contenedor.innerHTML = contenido;
+}
