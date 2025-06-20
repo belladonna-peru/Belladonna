@@ -109,3 +109,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+function mostrarImagenPago() {
+  const metodo = document.getElementById("metodoPago").value;
+  const contenedor = document.getElementById("imagenPago");
+
+  let img = "";
+  if (metodo === "yape") {
+    img = '<img src="img/IMG_2346.jpeg" alt="Pago con Yape" style="max-width: 200px;">';
+  } else if (metodo === "plin") {
+    img = '<img src="img/plin_qr.jpeg" alt="Pago con Plin" style="max-width: 200px;">';
+  } else if (metodo === "transferencia") {
+    img = "<p>Realiza tu transferencia a la cuenta: 123-4567890-00 a nombre de Belladonna Perú</p>";
+  }
+
+  contenedor.innerHTML = img;
+}
+
