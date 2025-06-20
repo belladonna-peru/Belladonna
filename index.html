@@ -161,3 +161,26 @@
   <script src="script.js"></script>
 </body>
 </html>
+<!-- Buscador -->
+<section class="busqueda">
+  <input type="text" id="buscarInput" placeholder="Buscar productos..." onkeyup="filtrarProductos()">
+</section>
+
+<!-- Productos destacados -->
+<section class="productos" id="productos">
+  <div class="producto">
+    <img src="https://via.placeholder.com/200x200.png?text=Labial+Mate" alt="Labial Mate Rosa">
+    <h4>Labial Mate Rosa</h4>
+    <p>S/ 45.00</p>
+    <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
+  </div>
+
+  <div class="producto">
+    <img src="https://via.placeholder.com/200x200.png?text=Base+Líquida" alt="Base Líquida">
+    <h4>Base Líquida Natural</h4>
+    <p>S/ 55.00</p>
+    <button class="cart-btn" onclick="agregarAlCarrito('Base Líquida Natural', 55)">Agregar al carrito</button>
+  </div>
+
+  <!-- Agrega más productos aquí -->
+</section>
