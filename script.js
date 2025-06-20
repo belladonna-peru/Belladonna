@@ -157,7 +157,7 @@ function mostrarImagenPago() {
 
   let img = "";
   if (metodo === "yape") {
-    img = '<img src="img/IMG_2346.jpeg" alt="Pago con Yape" style="max-width: 200px;">';
+    img = '<img src="IMG_2346.jpeg" alt="Pago con Yape" style="max-width: 200px;">';
   } else if (metodo === "plin") {
     img = '<img src="img/plin_qr.jpeg" alt="Pago con Plin" style="max-width: 200px;">';
   } else if (metodo === "transferencia") {
