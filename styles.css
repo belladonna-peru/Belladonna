@@ -457,10 +457,10 @@ img {
   .nav-menu.abierto {
     display: flex;
   }
+}
   
   body {
   overflow-x: hidden;
-}
 }
 
 input, select, button {
