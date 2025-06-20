@@ -360,3 +360,73 @@ form {
 .nav-menu a:hover {
   color: #d63384;
 }
+
+/* CARRITO LATERAL */
+.carrito-lateral {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transition: right 0.4s ease;
+  z-index: 9999;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carrito-lateral.abierto {
+  right: 0;
+}
+
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.cerrar-carrito {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.carrito-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.carrito-lista li {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.carrito-footer {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.cart-btn {
+  background-color: #d63384;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #c0216d;
+}
