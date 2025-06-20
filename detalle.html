@@ -3,36 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Detalle del Producto - Belladonna</title>
-
+  <title>Detalle del producto - Belladonna</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- Puedes incluir tu header aquí si quieres que se vea igual -->
-
-  <section class="detalle-producto">
-    <div class="detalle-imagen">
-      <img id="img-principal" src="https://via.placeholder.com/400x400.png?text=Labial+Mate" alt="Labial Mate Rosa">
-      <div class="miniaturas">
-        <img src="https://via.placeholder.com/100x100.png?text=Labial+1" onclick="cambiarImagen(this.src)">
-        <img src="https://via.placeholder.com/100x100.png?text=Labial+2" onclick="cambiarImagen(this.src)">
+  <header class="menu-top">
+    <div class="contenedor-menu">
+      <div class="logo"><a href="index.html">Belladonna</a></div>
+      <div class="iconos-header">
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#" onclick="toggleCarrito()"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
       </div>
     </div>
+  </header>
 
-    <div class="detalle-info">
-      <h2>Labial Mate Rosa</h2>
-      <p class="precio">S/ 45.00</p>
-      <p class="descripcion">Un labial de acabado mate, textura suave y de larga duración. Ideal para destacar tu sonrisa con elegancia y color.</p>
+  <main class="detalle-producto">
+    <div class="contenedor-detalle">
+      <div class="imagen-principal">
+        <img src="img/producto1.jpg" alt="Labial Mate Rosa" id="imagen-principal" />
+        <div class="miniaturas">
+          <img src="img/producto1.jpg" onclick="cambiarImagen(this.src)" />
+          <img src="img/producto1_2.jpg" onclick="cambiarImagen(this.src)" />
+        </div>
+      </div>
 
-      <label for="cantidad">Cantidad:</label>
-      <input type="number" id="cantidad" value="1" min="1">
-
-      <button class="cart-btn" onclick="agregarDetalleAlCarrito()">Agregar al carrito</button>
+      <div class="info-producto">
+        <h1>Labial Mate Rosa</h1>
+        <p class="precio">S/ 45.00</p>
+        <p>Un labial de textura suave y acabado mate que resalta tu belleza natural.</p>
+        <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
+      </div>
     </div>
-  </section>
+  </main>
+
+  <!-- CARRITO LATERAL -->
+  <div id="carrito" class="carrito">
+    <h3>Tu carrito</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Total: <span id="total-carrito">S/ 0.00</span></p>
+    <button onclick="finalizarCompra()" class="cart-btn">Finalizar compra</button>
+  </div>
 
   <script src="script.js"></script>
+  <script>
+    function cambiarImagen(src) {
+      document.getElementById("imagen-principal").src = src;
+    }
+  </script>
 </body>
 </html>
