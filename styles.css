@@ -462,3 +462,8 @@ img {
   overflow-x: hidden;
 }
 }
+
+input, select, button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
