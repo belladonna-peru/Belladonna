@@ -12,7 +12,32 @@
   <!-- Íconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<header class="menu-top">
+  <div class="contenedor-menu">
+    <div class="logo">Belladonna</div>
+
+    <div class="buscador">
+      <input type="text" placeholder="Buscar productos..." id="buscarInput" />
+      <button onclick="buscarProducto()"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="iconos-header">
+      <a href="#"><i class="fas fa-user"></i></a>
+      <a href="#" onclick="toggleCarrito()"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
+    </div>
+  </div>
+
+  <nav class="menu-secundario">
+    <ul class="nav-menu">
+      <li><a href="#">Marcas</a></li>
+      <li><a href="#">Cuidado de la piel</a></li>
+      <li><a href="#">Cabello</a></li>
+      <li><a href="#">Maquillaje</a></li>
+      <li><a href="#">Fragancias</a></li>
+      <li><a href="#">Descuentos</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- CARRITO LATERAL -->
   <div id="carrito" class="carrito">
