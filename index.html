@@ -100,3 +100,21 @@
   <button onclick="cotizarEnvio()" class="cart-btn" style="margin-top: 10px;">Calcular</button>
   <p id="resultado-envio" style="margin-top: 10px; color: #d63384;"></p>
 </section>
+<!-- FORMULARIO DE PAGO -->
+<section class="formulario-pago">
+  <h3>Finaliza tu Compra</h3>
+  <form id="formPago">
+    <input type="text" placeholder="Nombre completo" required>
+    <input type="email" placeholder="Correo electrónico" required>
+    <input type="text" placeholder="Dirección de envío" required>
+    <select required>
+      <option value="">Método de pago</option>
+      <option value="yape">Yape</option>
+      <option value="plin">Plin</option>
+      <option value="transferencia">Transferencia</option>
+    </select>
+    <button class="cart-btn" type="submit">Pagar</button>
+    <p id="pago-msg"></p>
+  </form>
+</section>
+
