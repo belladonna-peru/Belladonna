@@ -86,11 +86,10 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: white;
   padding: 10px 0;
-  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
   min-width: 180px;
 }
 
@@ -99,23 +98,64 @@ body {
 }
 
 .submenu-lista li {
-  display: block;
   padding: 5px 20px;
+  text-align: left;
 }
 
 .submenu-lista li a {
   color: #333;
   font-size: 14px;
   text-decoration: none;
-  display: block;
-  transition: background 0.3s ease;
 }
 
 .submenu-lista li a:hover {
-  background-color: #f7c1d9;
-  color: #fff;
+  color: var(--fucsia-oscuro);
 }
 
+/* Menú móvil */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-horizontal {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-horizontal.abierto {
+    display: flex;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .submenu-lista {
+    position: static;
+    box-shadow: none;
+  }
+
+  .submenu-lista li {
+    padding-left: 30px;
+  }
+
+  .submenu:hover .submenu-lista {
+    display: none;
+  }
+
+  .submenu.activo .submenu-lista {
+    display: block;
+  }
+}
 /* Buscador */
 .buscador {
   display: flex;
