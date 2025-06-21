@@ -335,3 +335,43 @@ const productos = [
   },
   // Más productos...
 ];
+
+function mostrarDetalleProducto(producto) {
+  document.getElementById("detalle-nombre").textContent = producto.nombre;
+  document.getElementById("detalle-precio").textContent = `S/ ${producto.precio.toFixed(2)}`;
+  document.getElementById("detalle-oferta").textContent = producto.oferta ? `S/ ${producto.oferta.toFixed(2)}` : "—";
+  document.getElementById("detalle-descripcion").textContent = producto.descripcion;
+  document.getElementById("detalle-uso").textContent = producto.uso;
+  document.getElementById("detalle-img").src = producto.imagen;
+  
+  // Estrellas
+  const estrellas = "⭐".repeat(producto.recomendacion);
+  document.getElementById("detalle-estrellas").textContent = estrellas;
+
+  // Tonalidades
+  const tonosDiv = document.getElementById("detalle-tonos");
+  tonosDiv.innerHTML = "";
+  if (producto.tonalidades) {
+    producto.tonalidades.forEach(t => {
+      const btn = document.createElement("button");
+      btn.textContent = t.nombre;
+      btn.className = "tono-btn";
+      btn.onclick = () => {
+        document.getElementById("detalle-img").src = t.imagen;
+        document.getElementById("detalle-nombre").textContent = t.nombre;
+      };
+      tonosDiv.appendChild(btn);
+    });
+  }
+
+  // Agregar al carrito
+  const btn = document.getElementById("btn-agregar-detalle");
+  btn.onclick = () => agregarAlCarrito(producto.nombre, producto.precio);
+
+  // Mostrar la sección
+  document.getElementById("detalle-dinamico").classList.remove("oculto");
+}
+
+function cerrarDetalle() {
+  document.getElementById("detalle-dinamico").classList.add("oculto");
+}
