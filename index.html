@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Belladonna – Detalle de Producto</title>
-
-  <!-- CSS y fuentes -->
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belladonna - Tienda de Belleza</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Banner envío -->
+  <!-- Banner de envío -->
   <div class="banner-envio">Envío gratis por compras mayores a S/.199 (Lima Metropolitana)</div>
 
-  <!-- Breadcrumb -->
-  <nav class="breadcrumb">
-    <a href="index.html">Inicio</a> › <a href="#">Maquillaje</a> › <span>Labial Mate Rosa</span>
-  </nav>
-
-  <!-- HEADER -->
+  <!-- Header principal -->
   <header class="header-principal">
     <div class="contenedor-header">
       <div class="logo"><a href="index.html">Belladonna</a></div>
+
       <div class="buscador">
-        <input type="text" id="buscarInput" placeholder="Buscar productos..." onkeyup="filtrarProductos()" />
+        <input type="text" id="buscarInput" placeholder="Buscar productos..." onkeyup="filtrarProductos()">
         <button onclick="filtrarProductos()"><i class="fas fa-search"></i></button>
       </div>
-     <header class="header-principal">
-  <div class="contenedor-header">
-    <div class="logo"><a href="index.html">Belladonna</a></div>
 
-    <!-- Botón hamburguesa para móviles -->
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
+      <div class="iconos-header">
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#" onclick="toggleCarrito()"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
+      </div>
+
+      <!-- Menú hamburguesa -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
 
+    <!-- Menú de navegación -->
     <nav class="menu-horizontal" id="menu">
       <ul class="nav-menu">
         <li class="submenu">
@@ -47,7 +45,6 @@
             <li><a href="#">Masglo</a></li>
           </ul>
         </li>
-
         <li class="submenu">
           <a href="#">Cuidado Facial</a>
           <ul class="submenu-lista">
@@ -56,7 +53,6 @@
             <li><a href="#">Exfoliantes</a></li>
           </ul>
         </li>
-
         <li class="submenu">
           <a href="#">Cabello</a>
           <ul class="submenu-lista">
@@ -65,7 +61,6 @@
             <li><a href="#">Aceites</a></li>
           </ul>
         </li>
-
         <li class="submenu">
           <a href="#">Maquillaje</a>
           <ul class="submenu-lista">
@@ -75,7 +70,6 @@
             <li><a href="#">Máscaras</a></li>
           </ul>
         </li>
-
         <li class="submenu">
           <a href="#">Fragancias</a>
           <ul class="submenu-lista">
@@ -83,7 +77,6 @@
             <li><a href="#">Colonia</a></li>
           </ul>
         </li>
-
         <li class="submenu">
           <a href="#">Ofertas</a>
           <ul class="submenu-lista">
@@ -92,7 +85,6 @@
             <li><a href="#">Nuevos lanzamientos</a></li>
           </ul>
         </li>
-
         <li class="submenu">
           <a href="#">Regalos</a>
           <ul class="submenu-lista">
@@ -102,18 +94,9 @@
         </li>
       </ul>
     </nav>
-  </div>
-</header>
-      <div class="iconos-header">
-        <a href="#"><i class="fas fa-user"></i></a>
-        <a href="#" onclick="toggleCarrito()">
-          <i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span>
-        </a>
-      </div>
-    </div>
   </header>
 
-  <!-- CARRITO LATERAL -->
+  <!-- Carrito lateral -->
   <div id="carrito" class="carrito-lateral">
     <div class="carrito-header">
       <h3>Tu carrito</h3>
@@ -125,59 +108,13 @@
       <button onclick="finalizarCompra()" class="cart-btn">Finalizar compra</button>
     </div>
   </div>
-  
-  <section class="seccion-pago">
-  <h2>Métodos de pago</h2>
-  <form id="formPago">
-    <input type="text" id="nombre" placeholder="Nombre completo" required>
-    <input type="email" id="correo" placeholder="Correo electrónico" required>
-    <input type="text" id="direccion" placeholder="Dirección de envío" required>
 
-    <label for="metodoPago">Selecciona método de pago:</label>
-    <select id="metodoPago" onchange="mostrarImagenPago()" required>
-      <option value="">-- Selecciona --</option>
-      <option value="yape">Yape</option>
-      <option value="plin">Plin</option>
-      <option value="transferencia">Transferencia</option>
-    </select>
-
-    <div id="imagenPago" class="metodos-pago"></div>
-
-    <button type="submit" class="cart-btn">Confirmar pedido</button>
-    <p id="pago-msg"></p>
-  </form>
-</section>
-
-<!-- BOTÓN HAMBURGUESA -->
-<div class="menu-toggle" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
-</div>
-
-  <!-- Main: detalle + filtros + productos -->
+  <!-- Productos -->
   <main class="main-contenido">
-    <!-- Vista detalle -->
-    <section class="detalle-producto">
-      <div class="galeria-imagenes">
-        <img id="imagenPrincipal" src="img/labial1.jpg" alt="Labial Mate Rosa" class="imagen-principal" />
-        <div class="miniaturas">
-          <img src="img/labial1.jpg" alt="Miniatura 1" onclick="cambiarImagen(this)" />
-          <img src="img/labial2.jpg" alt="Miniatura 2" onclick="cambiarImagen(this)" />
-          <img src="img/labial3.jpg" alt="Miniatura 3" onclick="cambiarImagen(this)" />
-        </div>
-      </div>
-      <div class="info-producto">
-        <h2>Labial Mate Rosa</h2>
-        <p class="precio">S/ 67.00</p>
-        <p class="descripcion">Labial de textura suave, acabado mate y larga duración. Destaca tu belleza con elegancia.</p>
-        <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
-      </div>
-    </section>
-
-    <!-- Filtros y productos -->
     <aside class="filtros-contenedor">
       <div class="filtros">
         <h4>Filtros</h4>
-        <input id="buscar" placeholder="Buscar..." onkeyup="filtrarProductos()" />
+        <input id="buscar" placeholder="Buscar..." onkeyup="filtrarProductos()">
         <label>Categoría</label>
         <select id="categoria" onchange="filtrarProductos()">
           <option value="">Todas</option>
@@ -200,22 +137,11 @@
           <option value="nombre-desc">Nombre Z–A</option>
         </select>
         <label>Precio hasta <span id="precio-valor">S/ 100</span></label>
-        <input type="range" id="precio" min="0" max="200" value="100" oninput="filtrarProductos(); document.getElementById('precio-valor').textContent = 'S/ ' + this.value" />
+        <input type="range" id="precio" min="0" max="200" value="100" oninput="filtrarProductos(); document.getElementById('precio-valor').textContent = 'S/ ' + this.value">
       </div>
 
       <section class="productos" id="productos">
-        <!-- Recomendados -->
-        <div class="producto" data-nombre="labial mate rosa" data-categoria="labial" data-marca="maybelline" data-precio="45">
-          <img src="img/labial1.jpg" alt="Labial Mate Rosa" />
-          <h4>Labial Mate Rosa</h4><p>S/ 45.00</p>
-          <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa',45)">Agregar</button>
-        </div>
-        <div class="producto" data-nombre="base líquida natural" data-categoria="base" data-marca="zeena" data-precio="55">
-          <img src="img/base1.jpg" alt="Base Líquida" />
-          <h4>Base Líquida Natural</h4><p>S/ 55.00</p>
-          <button class="cart-btn" onclick="agregarAlCarrito('Base Líquida Natural',55)">Agregar</button>
-        </div>
-        <!-- Más productos -->
+        <!-- Los productos se inyectan desde JS -->
       </section>
     </aside>
   </main>
@@ -230,7 +156,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <div class="footer-secciones">
       <div><h4>Servicio al cliente</h4><ul><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Cómo comprar</a></li></ul></div>
@@ -243,44 +169,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-<section id="detalleProducto" class="detalle-producto" style="display:none;">
-  <div class="galeria-imagenes">
-    <img id="imagenDetalle" src="" alt="Imagen del producto" class="imagen-principal">
-    <div class="miniaturas" id="miniaturasDetalle"></div>
-  </div>
-
-  <div class="info-producto">
-    <h2 id="nombreDetalle">Nombre del producto</h2>
-    <p class="precio">
-      <span id="precioActual">S/ 0.00</span>
-      <span id="precioOferta" class="oferta">S/ 0.00</span>
-    </p>
-    <p id="detalleTexto" class="descripcion"></p>
-    <p><strong>Modo de uso:</strong> <span id="modoUso"></span></p>
-    
-    <div class="estrellas" id="estrellas"></div>
-
-    <button class="cart-btn" id="btnAgregarDetalle">Agregar al carrito</button>
-  </div>
-</section>
-
-<!-- Sección dinámica de detalle de producto -->
-<section id="detalle-dinamico" class="detalle-dinamico oculto">
-  <div class="contenedor-detalle">
-    <div class="galeria-imagen">
-      <img id="detalle-img" src="" alt="" />
-      <div id="detalle-tonos" class="tonos"></div>
-    </div>
-    <div class="info-detalle">
-      <h2 id="detalle-nombre"></h2>
-      <p class="precio-actual">Precio: <span id="detalle-precio"></span></p>
-      <p class="precio-oferta">Oferta: <span id="detalle-oferta"></span></p>
-      <p><strong>Detalle:</strong> <span id="detalle-descripcion"></span></p>
-      <p><strong>Modo de uso:</strong> <span id="detalle-uso"></span></p>
-      <div class="estrellas" id="detalle-estrellas"></div>
-      <button class="cart-btn" id="btn-agregar-detalle">Agregar al carrito</button>
-      <button onclick="cerrarDetalle()" class="cerrar-detalle">Cerrar</button>
-    </div>
-  </div>
-</section>
