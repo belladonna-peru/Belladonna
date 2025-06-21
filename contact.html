@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contacto – Belladonna</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <!-- Header igual -->
-  <header class="header-principal">...</header>
 
-  <!-- Sección Contacto -->
-  <main style="padding: 40px;">
-    <h2 class="titulo">Contacto</h2>
-    <p>¿Tienes dudas? Escríbenos.</p>
-    <form action="https://formsubmit.co/belladonna_peru@hotmail.com" method="POST" class="formulario-contacto">
-      <input name="nombre" type="text" placeholder="Tu nombre" required />
-      <input name="correo" type="email" placeholder="Tu correo" required />
-      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-      <button type="submit" class="cart-btn">Enviar</button>
+  <!-- HEADER -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <div class="logo"><a href="index.html">Belladonna</a></div>
+      <nav class="menu-horizontal">
+        <ul class="nav-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#">Cuidado de la piel</a></li>
+          <li><a href="#">Cabello</a></li>
+          <li><a href="#">Maquillaje</a></li>
+          <li><a href="#">Fragancias</a></li>
+          <li><a href="#">Ofertas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <main class="contenedor-contacto" style="padding: 40px;">
+    <h2 class="titulo">Contáctanos</h2>
+    <form id="formContacto" class="formulario-contacto">
+      <input id="nombreContacto" type="text" placeholder="Nombre completo" required />
+      <input id="emailContacto" type="email" placeholder="Correo electrónico" required />
+      <textarea id="mensajeContacto" placeholder="Escribe tu mensaje" required></textarea>
+      <button type="submit" class="cart-btn">Enviar Mensaje</button>
+      <p id="contacto-msg"></p>
     </form>
   </main>
 
-  <!-- Footer + scripts -->
-  <footer>...</footer>
-  <script src="script.js"></script>
+  <!-- FOOTER -->
+  <footer class="footer-principal">
+    <div class="footer-info">
+      <p>&copy; 2025 Belladonna Perú - Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.getElementById("formContacto").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombreContacto").value.trim();
+      const email = document.getElementById("emailContacto").value.trim();
+      const mensaje = document.getElementById("mensajeContacto").value.trim();
+      const msg = document.getElementById("contacto-msg");
+
+      if (!nombre || !email || !mensaje) {
+        msg.textContent = "Por favor, completa todos los campos.";
+        msg.style.color = "crimson";
+        return;
+      }
+
+      msg.textContent = "✅ Tu mensaje ha sido enviado. Gracias por contactarnos.";
+      msg.style.color = "#28a745";
+      this.reset();
+    });
+  </script>
 </body>
 </html>
