@@ -260,3 +260,17 @@ function mostrarImagenPago() {
 function toggleMenu() {
   document.querySelector(".nav-menu").classList.toggle("abierto");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const submenus = document.querySelectorAll(".nav-menu .has-submenu > a");
+
+  submenus.forEach(link => {
+    link.addEventListener("click", e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parent = link.parentElement;
+        parent.classList.toggle("active");
+      }
+    });
+  });
+});
