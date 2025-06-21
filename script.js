@@ -114,6 +114,13 @@ function filtrarProductos() {
   const marca = document.getElementById("marca")?.value || "";
   const precioMax = parseFloat(document.getElementById("precio")?.value || "100");
   const orden = document.getElementById("orden")?.value || "";
+  const tipoPiel = document.getElementById("tipoPiel")?.value || "";
+const acabado = document.getElementById("acabado")?.value || "";
+
+resultado = resultado.filter(p =>
+  (tipoPiel === "" || p.tipoPiel === tipoPiel) &&
+  (acabado === "" || p.acabado === acabado)
+);
 
   let resultado = productos.filter(p =>
     p.nombre.toLowerCase().includes(texto) &&
