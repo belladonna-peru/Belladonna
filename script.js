@@ -321,3 +321,17 @@ function mostrarDetalleProducto(producto) {
   document.querySelector("main").style.display = "none";
   document.getElementById("detalleProducto").style.display = "flex";
 }
+
+const productos = [
+  {
+    nombre: "Labial Ultra Mate",
+    imagen: "img/labial1.jpg",
+    miniaturas: ["img/labial1.jpg", "img/labial2.jpg"],
+    precioActual: 50.00,
+    precioOferta: 35.00,
+    detalle: "Labial de textura sedosa, pigmento intenso y duración prolongada.",
+    modoUso: "Aplicar directamente sobre los labios desde el centro hacia los bordes.",
+    estrellas: 4
+  },
+  // Más productos...
+];
