@@ -664,3 +664,14 @@ input, select, button {
 .tonalidades button:hover {
   background-color: var(--fucsia-oscuro);
 }
+
+.oferta {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 10px;
+}
+
+.estrellas i {
+  color: gold;
+  margin: 0 1px;
+}
