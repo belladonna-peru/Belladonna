@@ -35,6 +35,17 @@ const productos = [
     precio: 60,
     imagen: "img/serum.jpg"
   }
+  {
+  nombre: "Base Líquida Natural",
+  categoria: "base",
+  marca: "zeena",
+  tipoPiel: "mixta",
+  acabado: "natural",
+  beneficios: ["hidratante", "ligera"],
+  tono: "Beige Claro",
+  precio: 55,
+  imagen: "img/base1.jpg"
+}
 ];
 
 // ============================
