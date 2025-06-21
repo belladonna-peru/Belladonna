@@ -644,3 +644,23 @@ input, select, button {
   max-width: 100%;
   box-sizing: border-box;
 }
+
+.tonalidades {
+  margin-top: 15px;
+}
+
+.tonalidades button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: var(--fucsia-claro);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tonalidades button:hover {
+  background-color: var(--fucsia-oscuro);
+}
