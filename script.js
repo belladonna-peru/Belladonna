@@ -274,3 +274,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("abierto");
+}
+
+// Para desplegar submenús en móviles
+document.addEventListener("DOMContentLoaded", () => {
+  const submenus = document.querySelectorAll(".submenu > a");
+
+  submenus.forEach(enlace => {
+    enlace.addEventListener("click", function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const item = this.parentElement;
+        item.classList.toggle("activo");
+      }
+    });
+  });
+});
