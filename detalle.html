@@ -61,6 +61,26 @@
       </div>
     </section>
   </main>
+  
+  <section class="detalle-producto">
+  <div class="galeria-imagenes">
+    <img id="imagenPrincipal" src="img/labial-rosa.jpg" alt="Labial Rosa" class="imagen-principal" />
+    <div class="tonalidades">
+      <button onclick="cambiarTonalidad('Rosa', 'img/labial-rosa.jpg')">Rosa</button>
+      <button onclick="cambiarTonalidad('Rojo Pasión', 'img/labial-rojo.jpg')">Rojo Pasión</button>
+      <button onclick="cambiarTonalidad('Vino Intenso', 'img/labial-vino.jpg')">Vino Intenso</button>
+    </div>
+  </div>
+
+  <div class="info-producto">
+    <h2 id="nombreProducto">Labial Rosa</h2>
+    <p class="precio">S/ 45.00</p>
+    <p class="descripcion">
+      Labial mate de larga duración con textura suave. Disponible en diversos tonos para cada ocasión.
+    </p>
+    <button class="cart-btn" onclick="agregarAlCarrito('Labial Rosa', 45)">Agregar al carrito</button>
+  </div>
+</section>
 
   <!-- CARRITO LATERAL -->
   <div id="carrito" class="carrito-lateral">
