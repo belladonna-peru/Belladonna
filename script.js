@@ -298,3 +298,26 @@ function cambiarTonalidad(nombre, imagen) {
   document.getElementById("imagenPrincipal").src = imagen;
   document.getElementById("nombreProducto").textContent = nombre;
 }
+
+function mostrarDetalleProducto(producto) {
+  document.getElementById("imagenDetalle").src = producto.imagen;
+  document.getElementById("nombreDetalle").textContent = producto.nombre;
+  document.getElementById("precioActual").textContent = `S/ ${producto.precioActual.toFixed(2)}`;
+  document.getElementById("precioOferta").textContent = `S/ ${producto.precioOferta.toFixed(2)}`;
+  document.getElementById("detalleTexto").textContent = producto.detalle;
+  document.getElementById("modoUso").textContent = producto.modoUso;
+
+  const estrellas = document.getElementById("estrellas");
+  estrellas.innerHTML = "";
+  for (let i = 0; i < 5; i++) {
+    estrellas.innerHTML += `<i class="fa${i < producto.estrellas ? 's' : 'r'} fa-star"></i>`;
+  }
+
+  document.getElementById("btnAgregarDetalle").onclick = function () {
+    agregarAlCarrito(producto.nombre, producto.precioOferta);
+  };
+
+  // Mostrar solo el detalle
+  document.querySelector("main").style.display = "none";
+  document.getElementById("detalleProducto").style.display = "flex";
+}
