@@ -264,3 +264,23 @@
     <button class="cart-btn" id="btnAgregarDetalle">Agregar al carrito</button>
   </div>
 </section>
+
+<!-- Sección dinámica de detalle de producto -->
+<section id="detalle-dinamico" class="detalle-dinamico oculto">
+  <div class="contenedor-detalle">
+    <div class="galeria-imagen">
+      <img id="detalle-img" src="" alt="" />
+      <div id="detalle-tonos" class="tonos"></div>
+    </div>
+    <div class="info-detalle">
+      <h2 id="detalle-nombre"></h2>
+      <p class="precio-actual">Precio: <span id="detalle-precio"></span></p>
+      <p class="precio-oferta">Oferta: <span id="detalle-oferta"></span></p>
+      <p><strong>Detalle:</strong> <span id="detalle-descripcion"></span></p>
+      <p><strong>Modo de uso:</strong> <span id="detalle-uso"></span></p>
+      <div class="estrellas" id="detalle-estrellas"></div>
+      <button class="cart-btn" id="btn-agregar-detalle">Agregar al carrito</button>
+      <button onclick="cerrarDetalle()" class="cerrar-detalle">Cerrar</button>
+    </div>
+  </div>
+</section>
