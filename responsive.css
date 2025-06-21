@@ -1,1 +1,131 @@
-text
+/* ====================
+   RESPONSIVE STYLES
+   ==================== */
+
+/* Teléfonos pequeños */
+@media (max-width: 480px) {
+  .contenedor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buscador {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .menu-horizontal {
+    width: 100%;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .productos {
+    grid-template-columns: 1fr;
+  }
+
+  .detalle-producto {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .galeria-imagenes,
+  .info-producto {
+    width: 100%;
+  }
+
+  .banner-contenido {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .iconos-header {
+    margin-top: 10px;
+  }
+
+  .carrito-lateral {
+    width: 100%;
+  }
+
+  .filtros-contenedor {
+    flex-direction: column;
+  }
+
+  .filtros,
+  .productos {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .contenedor-header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .menu-horizontal {
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav-menu {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
+
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carrito-lateral {
+    width: 90%;
+  }
+
+  .detalle-producto {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .imagen-principal img {
+    width: 100%;
+  }
+
+  .miniaturas img {
+    width: 60px;
+  }
+
+  .info-producto {
+    padding-top: 20px;
+  }
+
+  .footer-secciones {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Laptops pequeñas y resoluciones medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .banner-contenido h1 {
+    font-size: 2rem;
+  }
+
+  .menu-horizontal {
+    margin: 0 15px;
+  }
+
+  .buscador {
+    max-width: 300px;
+  }
+}
