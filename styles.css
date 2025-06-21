@@ -203,6 +203,65 @@ body {
   padding: 2px 6px;
 }
 
+/* Submenús */
+.nav-menu .has-submenu {
+  position: relative;
+}
+
+.nav-menu .submenu {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: none;
+  list-style: none;
+  padding: 10px 0;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  min-width: 180px;
+}
+
+.nav-menu .submenu li {
+  padding: 5px 20px;
+}
+
+.nav-menu .submenu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-menu .has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Responsive: menú hamburguesa + submenús colapsables */
+@media (max-width: 768px) {
+  .menu-horizontal {
+    flex-direction: column;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+  }
+
+  .nav-menu .has-submenu .submenu {
+    position: static;
+    display: none;
+    padding-left: 20px;
+    box-shadow: none;
+    background: none;
+  }
+
+  .nav-menu .has-submenu.active .submenu {
+    display: block;
+  }
+
+  .nav-menu .has-submenu > a::after {
+    content: " ▾";
+    float: right;
+  }
+}
 /* ==========================
    BANNER PRINCIPAL
 ========================== */
