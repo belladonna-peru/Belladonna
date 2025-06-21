@@ -324,17 +324,19 @@ function mostrarDetalleProducto(producto) {
 
 const productos = [
   {
-    nombre: "Labial Ultra Mate",
-    imagen: "img/labial1.jpg",
-    miniaturas: ["img/labial1.jpg", "img/labial2.jpg"],
-    precioActual: 50.00,
-    precioOferta: 35.00,
-    detalle: "Labial de textura sedosa, pigmento intenso y duración prolongada.",
-    modoUso: "Aplicar directamente sobre los labios desde el centro hacia los bordes.",
-    estrellas: 4
-  },
-  // Más productos...
-];
+  nombre: "Labial Mate Rosa",
+  precio: 45,
+  oferta: 39.90,
+  descripcion: "Color intenso de larga duración con acabado mate.",
+  uso: "Aplicar directamente sobre los labios limpios y secos.",
+  recomendacion: 4,
+  imagen: "img/labial1.jpg",
+  tonalidades: [
+    { nombre: "Rosa Claro", imagen: "img/labial1.jpg" },
+    { nombre: "Rosa Intenso", imagen: "img/labial2.jpg" },
+    { nombre: "Fucsia", imagen: "img/labial3.jpg" }
+  ]
+}
 
 function mostrarDetalleProducto(producto) {
   document.getElementById("detalle-nombre").textContent = producto.nombre;
