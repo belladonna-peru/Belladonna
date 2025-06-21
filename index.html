@@ -28,56 +28,82 @@
         <input type="text" id="buscarInput" placeholder="Buscar productos..." onkeyup="filtrarProductos()" />
         <button onclick="filtrarProductos()"><i class="fas fa-search"></i></button>
       </div>
-      <nav class="menu-horizontal">
-  <ul class="nav-menu">
-    <li class="has-submenu">
-      <a href="#">Marcas</a>
-      <ul class="submenu">
-        <li><a href="#">Maybelline</a></li>
-        <li><a href="#">Zeena</a></li>
-        <li><a href="#">Masglo</a></li>
-        <li><a href="#">Revlon</a></li>
+     <header class="header-principal">
+  <div class="contenedor-header">
+    <div class="logo"><a href="index.html">Belladonna</a></div>
+
+    <!-- Botón hamburguesa para móviles -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav class="menu-horizontal" id="menu">
+      <ul class="nav-menu">
+        <li class="submenu">
+          <a href="#">Marcas</a>
+          <ul class="submenu-lista">
+            <li><a href="#">Maybelline</a></li>
+            <li><a href="#">Zeena</a></li>
+            <li><a href="#">Masglo</a></li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#">Cuidado Facial</a>
+          <ul class="submenu-lista">
+            <li><a href="#">Cremas Hidratantes</a></li>
+            <li><a href="#">Sérums</a></li>
+            <li><a href="#">Exfoliantes</a></li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#">Cabello</a>
+          <ul class="submenu-lista">
+            <li><a href="#">Shampoos</a></li>
+            <li><a href="#">Tratamientos</a></li>
+            <li><a href="#">Aceites</a></li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#">Maquillaje</a>
+          <ul class="submenu-lista">
+            <li><a href="#">Labiales</a></li>
+            <li><a href="#">Bases</a></li>
+            <li><a href="#">Sombras</a></li>
+            <li><a href="#">Máscaras</a></li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#">Fragancias</a>
+          <ul class="submenu-lista">
+            <li><a href="#">Perfumes</a></li>
+            <li><a href="#">Colonia</a></li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#">Ofertas</a>
+          <ul class="submenu-lista">
+            <li><a href="#">Descuentos</a></li>
+            <li><a href="#">2x1</a></li>
+            <li><a href="#">Nuevos lanzamientos</a></li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#">Regalos</a>
+          <ul class="submenu-lista">
+            <li><a href="#">Packs</a></li>
+            <li><a href="#">Kits Personalizados</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-    <li class="has-submenu">
-      <a href="#">Cuidado Facial</a>
-      <ul class="submenu">
-        <li><a href="#">Limpiadores</a></li>
-        <li><a href="#">Hidratantes</a></li>
-        <li><a href="#">Sérums</a></li>
-        <li><a href="#">Protectores solares</a></li>
-      </ul>
-    </li>
-    <li class="has-submenu">
-      <a href="#">Cabello</a>
-      <ul class="submenu">
-        <li><a href="#">Shampoo</a></li>
-        <li><a href="#">Acondicionador</a></li>
-        <li><a href="#">Tratamientos</a></li>
-        <li><a href="#">Tintes</a></li>
-      </ul>
-    </li>
-    <li class="has-submenu">
-      <a href="#">Maquillaje</a>
-      <ul class="submenu">
-        <li><a href="#">Bases</a></li>
-        <li><a href="#">Labiales</a></li>
-        <li><a href="#">Sombras</a></li>
-        <li><a href="#">Delineadores</a></li>
-      </ul>
-    </li>
-    <li class="has-submenu">
-      <a href="#">Fragancias</a>
-      <ul class="submenu">
-        <li><a href="#">Perfumes Mujer</a></li>
-        <li><a href="#">Perfumes Hombre</a></li>
-        <li><a href="#">Sets</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Ofertas</a></li>
-    <li><a href="#">Regalos</a></li>
-  </ul>
-</nav>
+    </nav>
+  </div>
+</header>
       <div class="iconos-header">
         <a href="#"><i class="fas fa-user"></i></a>
         <a href="#" onclick="toggleCarrito()">
