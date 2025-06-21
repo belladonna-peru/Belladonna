@@ -293,3 +293,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function cambiarTonalidad(nombre, imagen) {
+  document.getElementById("imagenPrincipal").src = imagen;
+  document.getElementById("nombreProducto").textContent = nombre;
+}
