@@ -139,6 +139,25 @@
         <label>Precio hasta <span id="precio-valor">S/ 100</span></label>
         <input type="range" id="precio" min="0" max="200" value="100" oninput="filtrarProductos(); document.getElementById('precio-valor').textContent = 'S/ ' + this.value">
       </div>
+      <div class="filtro">
+  <label for="tipoPiel">Tipo de piel</label>
+  <select id="tipoPiel" onchange="filtrarProductos()">
+    <option value="">Todos</option>
+    <option value="seca">Seca</option>
+    <option value="mixta">Mixta</option>
+    <option value="grasa">Grasa</option>
+  </select>
+</div>
+
+<div class="filtro">
+  <label for="acabado">Acabado</label>
+  <select id="acabado" onchange="filtrarProductos()">
+    <option value="">Todos</option>
+    <option value="mate">Mate</option>
+    <option value="brillante">Brillante</option>
+    <option value="natural">Natural</option>
+  </select>
+</div>
 
       <section class="productos" id="productos">
         <!-- Los productos se inyectan desde JS -->
