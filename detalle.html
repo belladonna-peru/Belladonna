@@ -12,13 +12,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-
   <!-- HEADER -->
   <header class="header-principal">
     <div class="contenedor-header">
       <div class="logo"><a href="index.html">Belladonna</a></div>
-
-      <div class="menu-horizontal">
+      <nav class="menu-horizontal">
         <ul class="nav-menu">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="#">Cuidado de la piel</a></li>
@@ -27,8 +25,7 @@
           <li><a href="#">Fragancias</a></li>
           <li><a href="#">Ofertas</a></li>
         </ul>
-      </div>
-
+      </nav>
       <div class="iconos-header">
         <a href="#"><i class="fas fa-user"></i></a>
         <a href="#" onclick="toggleCarrito()">
@@ -49,38 +46,23 @@
           <img src="img/labial2.jpg" alt="Miniatura 2" onclick="cambiarImagen(this)">
           <img src="img/labial3.jpg" alt="Miniatura 3" onclick="cambiarImagen(this)">
         </div>
+        <div class="tonalidades">
+          <button onclick="cambiarTonalidad('Rosa Claro', 'img/labial1.jpg')">Rosa Claro</button>
+          <button onclick="cambiarTonalidad('Rosa Intenso', 'img/labial2.jpg')">Rosa Intenso</button>
+          <button onclick="cambiarTonalidad('Fucsia', 'img/labial3.jpg')">Fucsia</button>
+        </div>
       </div>
 
       <div class="info-producto">
-        <h2>Labial Mate Rosa</h2>
+        <h2 id="nombreProducto">Labial Mate Rosa</h2>
         <p class="precio">S/ 45.00</p>
         <p class="descripcion">
-          Labial de acabado mate con alta duración. Color vibrante y textura suave que cuida tus labios.
+          Labial mate de larga duración con textura suave. Disponible en diversos tonos para cada ocasión.
         </p>
         <button class="cart-btn" onclick="agregarAlCarrito('Labial Mate Rosa', 45)">Agregar al carrito</button>
       </div>
     </section>
   </main>
-  
-  <section class="detalle-producto">
-  <div class="galeria-imagenes">
-    <img id="imagenPrincipal" src="img/labial-rosa.jpg" alt="Labial Rosa" class="imagen-principal" />
-    <div class="tonalidades">
-      <button onclick="cambiarTonalidad('Rosa', 'img/labial-rosa.jpg')">Rosa</button>
-      <button onclick="cambiarTonalidad('Rojo Pasión', 'img/labial-rojo.jpg')">Rojo Pasión</button>
-      <button onclick="cambiarTonalidad('Vino Intenso', 'img/labial-vino.jpg')">Vino Intenso</button>
-    </div>
-  </div>
-
-  <div class="info-producto">
-    <h2 id="nombreProducto">Labial Rosa</h2>
-    <p class="precio">S/ 45.00</p>
-    <p class="descripcion">
-      Labial mate de larga duración con textura suave. Disponible en diversos tonos para cada ocasión.
-    </p>
-    <button class="cart-btn" onclick="agregarAlCarrito('Labial Rosa', 45)">Agregar al carrito</button>
-  </div>
-</section>
 
   <!-- CARRITO LATERAL -->
   <div id="carrito" class="carrito-lateral">
@@ -100,9 +82,10 @@
   <script>
     function cambiarImagen(imagen) {
       const principal = document.getElementById("imagenPrincipal");
-      principal.src = imagen.src;
+      if (principal && imagen?.src) {
+        principal.src = imagen.src;
+      }
     }
   </script>
-
 </body>
 </html>
