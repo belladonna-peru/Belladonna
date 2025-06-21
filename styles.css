@@ -675,3 +675,51 @@ input, select, button {
   color: gold;
   margin: 0 1px;
 }
+
+.detalle-dinamico {
+  display: none;
+  padding: 40px;
+  background-color: #fff;
+}
+
+.detalle-dinamico.oculto {
+  display: none;
+}
+
+.detalle-dinamico .contenedor-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.galeria-imagen img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  border: 2px solid #eee;
+}
+
+.tonos button {
+  margin: 5px;
+  padding: 8px 12px;
+  background: var(--fucsia-claro);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tonos button:hover {
+  background: var(--fucsia-oscuro);
+  color: #fff;
+}
+
+.cerrar-detalle {
+  margin-top: 20px;
+  background: #ccc;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
