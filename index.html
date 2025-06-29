@@ -3,188 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belladonna - Tienda de Belleza</title>
+  <title>Belladonna - Belleza & Estilo</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="responsive.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a2c3e4f123.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Banner de envío -->
-  <div class="banner-envio">Envío gratis por compras mayores a S/.199 (Lima Metropolitana)</div>
 
-  <!-- Header principal -->
-  <header class="header-principal">
-    <div class="contenedor-header">
-      <div class="logo"><a href="index.html">Belladonna</a></div>
-
-      <div class="buscador">
-        <input type="text" id="buscarInput" placeholder="Buscar productos..." onkeyup="filtrarProductos()">
-        <button onclick="filtrarProductos()"><i class="fas fa-search"></i></button>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="top-bar">
+      <div class="logo">BELLADONNA</div>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar productos...">
+        <button onclick="buscarProducto()"><i class="fas fa-search"></i></button>
       </div>
-
-      <div class="iconos-header">
+      <div class="icons">
         <a href="#"><i class="fas fa-user"></i></a>
-        <a href="#" onclick="toggleCarrito()"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
-      </div>
-
-      <!-- Menú hamburguesa -->
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
+        <a href="#" id="carritoBtn"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
       </div>
     </div>
 
-    <!-- Menú de navegación -->
-    <nav class="menu-horizontal" id="menu">
-      <ul class="nav-menu">
-        <li class="submenu">
-          <a href="#">Marcas</a>
-          <ul class="submenu-lista">
-            <li><a href="#">Maybelline</a></li>
-            <li><a href="#">Zeena</a></li>
-            <li><a href="#">Masglo</a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="#">Cuidado Facial</a>
-          <ul class="submenu-lista">
-            <li><a href="#">Cremas Hidratantes</a></li>
-            <li><a href="#">Sérums</a></li>
-            <li><a href="#">Exfoliantes</a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="#">Cabello</a>
-          <ul class="submenu-lista">
-            <li><a href="#">Shampoos</a></li>
-            <li><a href="#">Tratamientos</a></li>
-            <li><a href="#">Aceites</a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="#">Maquillaje</a>
-          <ul class="submenu-lista">
-            <li><a href="#">Labiales</a></li>
-            <li><a href="#">Bases</a></li>
-            <li><a href="#">Sombras</a></li>
-            <li><a href="#">Máscaras</a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="#">Fragancias</a>
-          <ul class="submenu-lista">
-            <li><a href="#">Perfumes</a></li>
-            <li><a href="#">Colonia</a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="#">Ofertas</a>
-          <ul class="submenu-lista">
-            <li><a href="#">Descuentos</a></li>
-            <li><a href="#">2x1</a></li>
-            <li><a href="#">Nuevos lanzamientos</a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="#">Regalos</a>
-          <ul class="submenu-lista">
-            <li><a href="#">Packs</a></li>
-            <li><a href="#">Kits Personalizados</a></li>
-          </ul>
-        </li>
+    <!-- MENÚ HORIZONTAL -->
+    <nav class="nav-bar">
+      <ul class="menu">
+        <li><a href="#">Marcas</a></li>
+        <li><a href="#">Cuidado de la piel</a></li>
+        <li><a href="#">Cabello</a></li>
+        <li><a href="#">Maquillaje</a></li>
+        <li><a href="#">Cuerpo</a></li>
+        <li><a href="#">Accesorios</a></li>
+        <li><a href="#">Fragancias</a></li>
+        <li><a href="#">Descuentos</a></li>
+        <li><a href="#">Sets & Regalos</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Carrito lateral -->
-  <div id="carrito" class="carrito-lateral">
-    <div class="carrito-header">
-      <h3>Tu carrito</h3>
-      <button class="cerrar-carrito" onclick="toggleCarrito()">✖</button>
-    </div>
-    <ul id="lista-carrito" class="carrito-lista"></ul>
-    <div class="carrito-footer">
-      <p>Total: <span id="total-carrito">S/ 0.00</span></p>
-      <button onclick="finalizarCompra()" class="cart-btn">Finalizar compra</button>
-    </div>
-  </div>
-
-  <!-- Productos -->
-  <main class="main-contenido">
-    <aside class="filtros-contenedor">
-      <div class="filtros">
-        <h4>Filtros</h4>
-        <input id="buscar" placeholder="Buscar..." onkeyup="filtrarProductos()">
-        <label>Categoría</label>
-        <select id="categoria" onchange="filtrarProductos()">
-          <option value="">Todas</option>
-          <option value="labial">Labial</option>
-          <option value="base">Base</option>
-        </select>
-        <label>Marca</label>
-        <select id="marca" onchange="filtrarProductos()">
-          <option value="">Todas</option>
-          <option value="maybelline">Maybelline</option>
-          <option value="zeena">Zeena</option>
-          <option value="masglo">Masglo</option>
-        </select>
-        <label>Ordenar por</label>
-        <select id="orden" onchange="filtrarProductos()">
-          <option value="relevancia">Relevancia</option>
-          <option value="precio-asc">Precio: menor → mayor</option>
-          <option value="precio-desc">Precio: mayor → menor</option>
-          <option value="nombre-asc">Nombre A–Z</option>
-          <option value="nombre-desc">Nombre Z–A</option>
-        </select>
-        <label>Precio hasta <span id="precio-valor">S/ 100</span></label>
-        <input type="range" id="precio" min="0" max="200" value="100" oninput="filtrarProductos(); document.getElementById('precio-valor').textContent = 'S/ ' + this.value">
-      </div>
-      <div class="filtro">
-  <label for="tipoPiel">Tipo de piel</label>
-  <select id="tipoPiel" onchange="filtrarProductos()">
-    <option value="">Todos</option>
-    <option value="seca">Seca</option>
-    <option value="mixta">Mixta</option>
-    <option value="grasa">Grasa</option>
-  </select>
-</div>
-
-<div class="filtro">
-  <label for="acabado">Acabado</label>
-  <select id="acabado" onchange="filtrarProductos()">
-    <option value="">Todos</option>
-    <option value="mate">Mate</option>
-    <option value="brillante">Brillante</option>
-    <option value="natural">Natural</option>
-  </select>
-</div>
-
-      <section class="productos" id="productos">
-        <!-- Los productos se inyectan desde JS -->
-      </section>
-    </aside>
-  </main>
-
-  <!-- Redes sociales -->
-  <section class="redes-sociales">
-    <h3>Síguenos en nuestras redes</h3>
-    <div class="iconos-redes">
-      <a href="https://www.instagram.com/bella.donna_peru"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/share/1AvCKwwXFo/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-      <a href="https://wa.me/51972389767"><i class="fab fa-whatsapp"></i></a>
+  <!-- BANNER -->
+  <section class="banner">
+    <img src="img/banner-principal.jpg" alt="Promoción Belladonna">
+    <div class="banner-texto">
+      <h1>Descubre tu belleza única</h1>
+      <p>Maquillaje, cuidado y fragancias para todos</p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-secciones">
-      <div><h4>Servicio al cliente</h4><ul><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Cómo comprar</a></li></ul></div>
-      <div><h4>Sobre Belladonna</h4><ul><li><a href="#">Quiénes somos</a></li><li><a href="#">Términos y condiciones</a></li></ul></div>
+  <!-- SECCIÓN DE PRODUCTOS -->
+  <main class="productos">
+    <h2>Nuestros productos destacados</h2>
+    <div class="grid-productos" id="gridProductos">
+      <!-- Aquí van los productos dinámicamente -->
     </div>
-    <p>© 2025 Belladonna. Todos los derechos reservados.</p>
+  </main>
+
+  <!-- FOOTER SIMPLE -->
+  <footer class="footer">
+    <p>&copy; 2025 Belladonna. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
