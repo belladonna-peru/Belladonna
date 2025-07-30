@@ -1,116 +1,79 @@
-/* ==================== RESPONSIVE.CSS ==================== */
+/* ========== RESPONSIVE PARA TABLETS Y CELULARES ========== */
 
-/* Ajustes generales para pantallas menores a 1024px */
-@media (max-width: 1024px) {
-  .contenedor-header,
-  .menu-horizontal,
-  .buscador,
-  .iconos-header {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .nav-menu {
+@media (max-width: 991px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
   }
+
+  .menu-principal {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .banner-texto h2 {
+    font-size: 1.6rem;
+  }
+
+  .banner-texto p {
+    font-size: 1rem;
+  }
+
+  .grid-productos {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .btn-header {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
 }
 
-/* Tablet (768px) */
 @media (max-width: 768px) {
-  .banner {
-    padding: 80px 20px;
-    text-align: center;
+  .main-nav {
+    width: 100%;
+    order: 2;
   }
 
-  .buscador {
+  .menu-principal {
     flex-direction: column;
-    max-width: 100%;
-    margin: 10px 0;
+    align-items: flex-start;
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e91e63;
+    border-radius: 10px;
   }
 
-  .menu-horizontal {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu-horizontal.activo {
-    display: flex;
-  }
-
-  .menu-toggle {
+  .menu-principal li a {
     display: block;
-    cursor: pointer;
-  }
-
-  .carrito-lateral {
     width: 100%;
+    padding: 10px;
   }
 
-  .productos {
-    grid-template-columns: 1fr;
-    padding: 0 15px;
-  }
-
-  .detalle-producto {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .galeria-imagenes, .info-producto {
+  .header-buttons {
     width: 100%;
-    text-align: center;
+    justify-content: space-between;
+    order: 3;
   }
 
-  .miniaturas img {
-    width: 60px;
-  }
-
-  .footer-secciones {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-}
-
-/* Móviles (480px) */
-@media (max-width: 480px) {
-  .logo a {
-    font-size: 22px;
-  }
-
-  .iconos-header a {
-    font-size: 16px;
-  }
-
-  .cart-btn {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
-
-  .banner {
-    padding: 60px 15px;
-  }
-
-  .detalle-producto h2 {
-    font-size: 22px;
-  }
-
-  .filtros {
+  .logo {
+    justify-content: space-between;
     width: 100%;
-    padding: 15px;
+    order: 1;
   }
 
-  .productos {
-    gap: 15px;
+  .banner-texto h2 {
+    font-size: 1.4rem;
   }
 
-  .producto img {
-    height: auto;
+  .productos-container h2 {
+    font-size: 1.4rem;
   }
 
-  .metodos-pago img {
-    max-width: 200px;
+  .footer {
+    font-size: 0.8rem;
   }
 }
