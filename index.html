@@ -3,65 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belladonna - Belleza & Estilo</title>
+  <title>Zephyra - Belleza que empodera</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="responsive.css">
-  <script src="https://kit.fontawesome.com/a2c3e4f123.js" crossorigin="anonymous"></script>
+  <script defer src="script.js"></script>
+  <link rel="shortcut icon" href="img/logo.png" type="image/png">
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
+  <!-- CABECERA -->
   <header class="header">
-    <div class="top-bar">
-      <div class="logo">BELLADONNA</div>
-      <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Buscar productos...">
-        <button onclick="buscarProducto()"><i class="fas fa-search"></i></button>
+    <div class="container header-content">
+      <div class="logo">
+        <img src="img/logo.png" alt="Zephyra Logo">
+        <h1>Zephyra</h1>
       </div>
-      <div class="icons">
-        <a href="#"><i class="fas fa-user"></i></a>
-        <a href="#" id="carritoBtn"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+      <nav class="main-nav">
+        <ul class="menu-principal">
+            <li><a href="#marcas">Marcas</a></li>
+            <li><a href="#piel">Facial</a></li>
+            <li><a href="#maquillaje">Maquillaje</a></li>
+            <li><a href="#cabello">Cabello</a></li>
+            <li><a href="#accesorios">Accesorios</a></li>
+            <li><a href="#fragancias">Fragancias</a></li>
+            <li><a href="#packs">Packs</a></li>
+            <li><a href="#descuentos">Descuentos</a></li>
+        </ul>
+      </nav>
+
+
+      <div class="header-buttons">
+        <button id="btn-login" class="btn-header">Iniciar Sesión</button>
+        <button id="btn-register" class="btn-header">Registrarse</button>
+        <div id="carrito-icono" class="carrito-icono">
+          🛒 <span id="contador-carrito">0</span>
+        </div>
       </div>
     </div>
-
-    <!-- MENÚ HORIZONTAL -->
-    <nav class="nav-bar">
-      <ul class="menu">
-        <li><a href="#">Marcas</a></li>
-        <li><a href="#">Cuidado de la piel</a></li>
-        <li><a href="#">Cabello</a></li>
-        <li><a href="#">Maquillaje</a></li>
-        <li><a href="#">Cuerpo</a></li>
-        <li><a href="#">Accesorios</a></li>
-        <li><a href="#">Fragancias</a></li>
-        <li><a href="#">Descuentos</a></li>
-        <li><a href="#">Sets & Regalos</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- BANNER -->
   <section class="banner">
-    <img src="img/banner-principal.jpg" alt="Promoción Belladonna">
     <div class="banner-texto">
-      <h1>Descubre tu belleza única</h1>
-      <p>Maquillaje, cuidado y fragancias para todos</p>
+      <h2>Descubre tu belleza con Zephyra</h2>
+      <p>Maquillaje, fragancias y cuidado para cada estilo.</p>
     </div>
   </section>
 
   <!-- SECCIÓN DE PRODUCTOS -->
-  <main class="productos">
-    <h2>Nuestros productos destacados</h2>
-    <div class="grid-productos" id="gridProductos">
-      <!-- Aquí van los productos dinámicamente -->
+  <main class="productos-container">
+    <h2>Productos Destacados</h2>
+    <div id="grid-productos" class="grid-productos">
+      <!-- Los productos se cargarán dinámicamente desde script.js -->
     </div>
   </main>
 
-  <!-- FOOTER SIMPLE -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>&copy; 2025 Belladonna. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Zephyra. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Ejemplo de modal -->
+<div class="modal" id="modalLogin">
+  <div class="modal-content">
+    <span id="cerrarModal" class="cerrar">&times;</span>
+    <!-- Tu formulario de login aquí -->
+  </div>
+</div>
+
 </body>
 </html>
